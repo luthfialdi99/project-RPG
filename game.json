@@ -7,13 +7,13 @@
     "revision": 0
   },
   "properties": {
-    "adaptGameResolutionAtRuntime": true,
-    "folderProject": false,
+    "adaptGameResolutionAtRuntime": false,
+    "folderProject": true,
     "orientation": "landscape",
     "packageName": "com.example.gamename",
     "pixelsRounding": false,
     "projectUuid": "de68c8f8-dfa0-4a88-939b-6f1143d939e4",
-    "scaleMode": "linear",
+    "scaleMode": "nearest",
     "sizeOnStartupMode": "adaptWidth",
     "templateSlug": "",
     "useExternalSourceFiles": false,
@@ -61,9 +61,32 @@
   },
   "objects": [],
   "objectsGroups": [],
-  "variables": [],
-  "layouts": [],
-  "externalEvents": [],
+  "variables": [
+    {
+      "folded": true,
+      "name": "resWidth",
+      "type": "number",
+      "value": 800
+    },
+    {
+      "folded": true,
+      "name": "resHeight",
+      "type": "number",
+      "value": 600
+    }
+  ],
+  "layouts": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/untitled-scene"
+    }
+  ],
+  "externalEvents": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/game-config"
+    }
+  ],
   "eventsFunctionsExtensions": [],
   "externalLayouts": [],
   "externalSourceFiles": []
