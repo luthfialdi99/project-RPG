@@ -153,21 +153,46 @@
     },
     {
       "angle": 0,
-      "customSize": true,
-      "height": 32,
+      "customSize": false,
+      "height": 0,
       "layer": "",
-      "name": "dialogueBoxes_lr",
-      "persistentUuid": "0f3f3544-ffba-4afc-9492-afa2077467cb",
-      "width": 10,
-      "x": 192,
-      "y": 96,
+      "name": "debugText",
+      "persistentUuid": "efa88000-6ca0-4c97-bc9e-2a7d9ff66c1f",
+      "width": 0,
+      "x": 16,
+      "y": 0,
       "zOrder": 44,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 1
-        }
-      ],
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "dialogueShape",
+      "persistentUuid": "fa7b043d-1b8f-4eac-9948-8e022dd8048d",
+      "width": 0,
+      "x": -64,
+      "y": 192,
+      "zOrder": 45,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UI",
+      "name": "inventoryBackground",
+      "persistentUuid": "15ef102e-8750-43ce-92bc-ff2d72e10b88",
+      "width": 0,
+      "x": -64,
+      "y": 256,
+      "zOrder": 46,
+      "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
     }
@@ -296,7 +321,7 @@
         "opacity": 255,
         "fontSize": 20,
         "visible": true,
-        "color": "0;0;0",
+        "color": "255;255;255",
         "fontFamily": "Arial",
         "align": "left",
         "wordWrap": true
@@ -322,7 +347,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "left-1.png",
+                  "image": "NewSprite-1.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -351,6 +376,210 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
+                  "image": "NewSprite-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mid",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "NewSprite-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "debugText",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "text": "Test",
+        "opacity": 255,
+        "fontSize": 20,
+        "visible": true,
+        "color": "0;0;0",
+        "fontFamily": "Arial",
+        "align": "left",
+        "wordWrap": true
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "dialogueShape",
+      "tags": "",
+      "type": "PrimitiveDrawing::Drawer",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "fillOpacity": 200,
+      "outlineSize": 0,
+      "outlineOpacity": 255,
+      "fillColor": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "outlineColor": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "absoluteCoordinates": true,
+      "clearBetweenFrames": true
+    },
+    {
+      "assetStoreId": "",
+      "name": "inventoryBackground",
+      "tags": "",
+      "type": "PrimitiveDrawing::Drawer",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "fillOpacity": 200,
+      "outlineSize": 0,
+      "outlineOpacity": 255,
+      "fillColor": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "outlineColor": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "absoluteCoordinates": true,
+      "clearBetweenFrames": true
+    },
+    {
+      "assetStoreId": "",
+      "name": "InventoryTexts",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "text": "Inv",
+        "opacity": 255,
+        "fontSize": 20,
+        "visible": true,
+        "color": "255;255;255",
+        "fontFamily": "Arial",
+        "align": "left",
+        "wordWrap": true
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "invIcons",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "NewSprite-1-0.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "invBox",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "invBox_id",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
                   "image": "left-1.png",
                   "points": [],
                   "originPoint": {
@@ -371,6 +600,25 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "NewBBText",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "text": "[b]bold[/b] [i]italic[/i] [size=15]smaller[/size] [font=times]times[/font] font\n[spacing=12]spaced out[/spacing]\n[outline=yellow]outlined[/outline] [shadow=red]DropShadow[/shadow] ",
+        "opacity": 255,
+        "fontSize": 20,
+        "visible": true,
+        "color": "0;0;0",
+        "fontFamily": "Arial",
+        "align": "left",
+        "wordWrap": true
+      }
     }
   ],
   "events": [
@@ -380,6 +628,13 @@
         "includeConfig": 0
       },
       "target": "game-config"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "camera-system"
     },
     {
       "type": "BuiltinCommonInstructions::Link",
@@ -401,6 +656,13 @@
         "includeConfig": 0
       },
       "target": "dialogue-system"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "inventory-system"
     }
   ],
   "layers": [

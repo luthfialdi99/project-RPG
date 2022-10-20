@@ -1,0 +1,25 @@
+{
+  "associatedLayout": "Untitled scene",
+  "lastChangeTimeStamp": 0,
+  "name": "camera-system",
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "CentreCamera"
+          },
+          "parameters": [
+            "",
+            "playerAnim",
+            "",
+            "",
+            ""
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -35,6 +35,18 @@
             "no",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "MettreXY"
+          },
+          "parameters": [
+            "debugText",
+            "=",
+            "MouseX()",
+            "=",
+            "MouseY()"
+          ]
         }
       ]
     },
@@ -56,6 +68,34 @@
           },
           "parameters": [
             "NPC"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "SourisSurObjet"
+          },
+          "parameters": [
+            "invBox",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "BBText::SetBBText"
+          },
+          "parameters": [
+            "debugText",
+            "=",
+            "\"[size=12][color=white][outline=black]invBox_id = \"+invBox.VariableString(invBox_id)+\"\nX = \"+ToString(invBox.X())+\"[/outline][/color][/size]\""
           ]
         }
       ]

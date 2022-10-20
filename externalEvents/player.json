@@ -25,6 +25,25 @@
             "player",
             "TopDownMovement"
           ]
+        },
+        {
+          "type": {
+            "value": "ChangeAnimation"
+          },
+          "parameters": [
+            "playerAnim",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "FlipX"
+          },
+          "parameters": [
+            "playerAnim",
+            "no"
+          ]
         }
       ]
     },
@@ -49,6 +68,56 @@
           "parameters": [
             "player",
             "TopDownMovement"
+          ]
+        },
+        {
+          "type": {
+            "value": "ChangeAnimation"
+          },
+          "parameters": [
+            "playerAnim",
+            "=",
+            "0"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "Animation"
+              },
+              "parameters": [
+                "playerAnim",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "Animation"
+              },
+              "parameters": [
+                "playerAnim",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FlipX"
+              },
+              "parameters": [
+                "playerAnim",
+                "yes"
+              ]
+            }
           ]
         }
       ]
@@ -75,6 +144,25 @@
             "player",
             "TopDownMovement"
           ]
+        },
+        {
+          "type": {
+            "value": "ChangeAnimation"
+          },
+          "parameters": [
+            "playerAnim",
+            "=",
+            "2"
+          ]
+        },
+        {
+          "type": {
+            "value": "FlipX"
+          },
+          "parameters": [
+            "playerAnim",
+            "no"
+          ]
         }
       ]
     },
@@ -99,6 +187,144 @@
           "parameters": [
             "player",
             "TopDownMovement"
+          ]
+        },
+        {
+          "type": {
+            "value": "ChangeAnimation"
+          },
+          "parameters": [
+            "playerAnim",
+            "=",
+            "0"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "Animation"
+              },
+              "parameters": [
+                "playerAnim",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "Animation"
+              },
+              "parameters": [
+                "playerAnim",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FlipX"
+              },
+              "parameters": [
+                "playerAnim",
+                "no"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "KeyPressed"
+          },
+          "parameters": [
+            "",
+            "s"
+          ]
+        },
+        {
+          "type": {
+            "value": "KeyPressed"
+          },
+          "parameters": [
+            "",
+            "a"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ChangeAnimation"
+          },
+          "parameters": [
+            "playerAnim",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "FlipX"
+          },
+          "parameters": [
+            "playerAnim",
+            "yes"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "KeyReleased"
+          },
+          "parameters": [
+            "",
+            "Escape"
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "invOpen",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "invOpen",
+                "=",
+                "1"
+              ]
+            }
           ]
         }
       ]

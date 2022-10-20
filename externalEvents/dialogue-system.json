@@ -5,6 +5,20 @@
   "events": [
     {
       "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "Cache"
+          },
+          "parameters": [
+            "dialogueBoxes_lr"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
           "type": {
@@ -29,6 +43,16 @@
             "NPC.CenterX()",
             "=",
             "NPC.CenterY()-NPCAnim.Height()-30"
+          ]
+        },
+        {
+          "type": {
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "dialogueShape",
+            "=",
+            "dialogue.ZOrder()-1"
           ]
         }
       ],
@@ -55,38 +79,48 @@
               "parameters": [
                 "dialogueBoxes_lr",
                 "=",
-                "dialogue.X()-dialogueBoxes_lr.Width()",
+                "dialogue.X()-10",
                 "=",
-                "dialogue.Y()"
+                "dialogue.Y()-5"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeWidth"
+              },
+              "parameters": [
+                "dialogueBoxes_lr",
+                "=",
+                "dialogue.Width()+20"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeHeight"
+              },
+              "parameters": [
+                "dialogueBoxes_lr",
+                "=",
+                "dialogue.Height()+20"
               ]
             }
           ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "Animation"
-              },
-              "parameters": [
-                "dialogueBoxes_lr",
-                "=",
-                "1"
-              ]
-            }
-          ],
+          "conditions": [],
           "actions": [
             {
               "type": {
-                "value": "MettreXY"
+                "value": "PrimitiveDrawing::RoundedRectangle"
               },
               "parameters": [
-                "dialogueBoxes_lr",
-                "=",
-                "dialogue.X()+dialogue.Width()",
-                "=",
-                "dialogue.Y()"
+                "dialogueShape",
+                "dialogueBoxes_lr.X()",
+                "dialogueBoxes_lr.Y()",
+                "dialogueBoxes_lr.X()+dialogueBoxes_lr.Width()",
+                "dialogueBoxes_lr.Y()+dialogueBoxes_lr.Height()",
+                "1000"
               ]
             }
           ]
@@ -119,6 +153,14 @@
             "0",
             "=",
             "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "Cache"
+          },
+          "parameters": [
+            "dialogueBoxes_lr"
           ]
         }
       ]
@@ -431,6 +473,34 @@
                     "dialogue_active",
                     "=",
                     "5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "=",
+                    "\"Let's try this.\nHelloooo...\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "6"
                   ]
                 }
               ],
