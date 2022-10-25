@@ -1,0 +1,332 @@
+{
+  "associatedLayout": "Untitled scene",
+  "lastChangeTimeStamp": 0,
+  "name": "item-drop",
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "PrimitiveDrawing::RoundedRectangle"
+          },
+          "parameters": [
+            "buttonPromptShape",
+            "buttonPrompt.X()-10",
+            "buttonPrompt.Y()-10",
+            "buttonPrompt.X()+buttonPrompt.Width()+10",
+            "buttonPrompt.Y()+buttonPrompt.Height()+10",
+            "255"
+          ]
+        },
+        {
+          "type": {
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "buttonPromptShape",
+            "=",
+            "buttonPrompt.ZOrder()-1"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "BBText::SetOpacity"
+          },
+          "parameters": [
+            "buttonPrompt",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "PrimitiveDrawing::FillOpacity"
+          },
+          "parameters": [
+            "buttonPromptShape",
+            "=",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PrimitiveDrawing::FillOpacity"
+          },
+          "parameters": [
+            "buttonPromptShape",
+            "<=",
+            "200"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "PrimitiveDrawing::FillOpacity"
+          },
+          "parameters": [
+            "buttonPromptShape",
+            "=",
+            "buttonPrompt.GetOpacity()"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::ForEach",
+      "object": "item",
+      "conditions": [],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CenterY"
+              },
+              "parameters": [
+                "item",
+                "<",
+                "player.CenterY()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "item",
+                "=",
+                "player.ZOrder()+1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CenterY"
+              },
+              "parameters": [
+                "item",
+                ">",
+                "player.CenterY()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "item",
+                "=",
+                "player.ZOrder()-1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "item",
+                "dropped",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Knife",
+              "comment2": ""
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "item",
+                    "itemType",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangeAnimation"
+                      },
+                      "parameters": [
+                        "item",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Distance"
+                      },
+                      "parameters": [
+                        "player",
+                        "item",
+                        "100",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MettreX"
+                      },
+                      "parameters": [
+                        "buttonPrompt",
+                        "=",
+                        "item.CenterX()+50"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MettreY"
+                      },
+                      "parameters": [
+                        "buttonPrompt",
+                        "=",
+                        "item.Y()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BBText::SetBBText"
+                      },
+                      "parameters": [
+                        "buttonPrompt",
+                        "=",
+                        "\"[size=18]Knife[/size]\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::AddObjectOpacityTween"
+                      },
+                      "parameters": [
+                        "buttonPrompt",
+                        "Tween",
+                        "\"bpV\"",
+                        "255",
+                        "\"linear\"",
+                        "300",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Distance"
+                      },
+                      "parameters": [
+                        "player",
+                        "item",
+                        "100",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Tween::AddObjectOpacityTween"
+                      },
+                      "parameters": [
+                        "buttonPrompt",
+                        "Tween",
+                        "\"bpNV\"",
+                        "0",
+                        "\"linear\"",
+                        "300",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PrimitiveDrawing::FillOpacity"
+                      },
+                      "parameters": [
+                        "buttonPromptShape",
+                        "-",
+                        "55"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
