@@ -95,7 +95,7 @@
           "parameters": [
             "debugText",
             "=",
-            "\"[size=12][color=white][outline=black]invBox_id = \"+invBox.VariableString(invBox_id)+\"\nX = \"+ToString(invBox.X())+\"[/outline][/color][/size]\""
+            "\"[size=12][color=white][outline=black]invBox_id = \"+invBox.VariableString(invBox_id)+\"\nX = \"+ToString(invBox.X())+\"\ninvBox_Occupied = \"+invBox.VariableString(invBox_Occupied)+\"[/outline][/color][/size]\""
           ]
         }
       ]

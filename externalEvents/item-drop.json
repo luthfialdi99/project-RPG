@@ -105,60 +105,6 @@
           "conditions": [
             {
               "type": {
-                "value": "CenterY"
-              },
-              "parameters": [
-                "item",
-                "<",
-                "player.CenterY()"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "ChangePlan"
-              },
-              "parameters": [
-                "item",
-                "=",
-                "player.ZOrder()+1"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "CenterY"
-              },
-              "parameters": [
-                "item",
-                ">",
-                "player.CenterY()"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "ChangePlan"
-              },
-              "parameters": [
-                "item",
-                "=",
-                "player.ZOrder()-1"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
                 "value": "VarObjet"
               },
               "parameters": [
@@ -171,6 +117,207 @@
           ],
           "actions": [],
           "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PickNearest"
+                  },
+                  "parameters": [
+                    "item",
+                    "player.CenterX()",
+                    "player.CenterY()",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetEffectDoubleParameter"
+                  },
+                  "parameters": [
+                    "item",
+                    "\"Effect\"",
+                    "\"thickness\"",
+                    "item.Variable(effect)"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "CenterY"
+                      },
+                      "parameters": [
+                        "item",
+                        "<",
+                        "player.CenterY()"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "item",
+                        "=",
+                        "player.ZOrder()+1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "CenterY"
+                      },
+                      "parameters": [
+                        "item",
+                        ">",
+                        "player.CenterY()"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "item",
+                        "=",
+                        "player.ZOrder()-1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Distance"
+                  },
+                  "parameters": [
+                    "player",
+                    "item",
+                    "100",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PickNearest"
+                      },
+                      "parameters": [
+                        "item",
+                        "player.CenterX()",
+                        "player.CenterY()",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MettreX"
+                      },
+                      "parameters": [
+                        "buttonPrompt",
+                        "=",
+                        "item.CenterX()+50"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MettreY"
+                      },
+                      "parameters": [
+                        "buttonPrompt",
+                        "=",
+                        "item.Y()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::AddObjectOpacityTween"
+                      },
+                      "parameters": [
+                        "buttonPrompt",
+                        "Tween",
+                        "\"bpV\"",
+                        "255",
+                        "\"linear\"",
+                        "300",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::AddObjectVariableTween"
+                      },
+                      "parameters": [
+                        "item",
+                        "Tween",
+                        "\"outlineEffect2\"",
+                        "effect",
+                        "1",
+                        "0",
+                        "\"linear\"",
+                        "300",
+                        ""
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "KeyReleased"
+                          },
+                          "parameters": [
+                            "",
+                            "e"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "ModVarObjet"
+                          },
+                          "parameters": [
+                            "item",
+                            "dropped",
+                            "=",
+                            "2"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
             {
               "type": "BuiltinCommonInstructions::Comment",
               "color": {
@@ -235,46 +382,60 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "MettreX"
-                      },
-                      "parameters": [
-                        "buttonPrompt",
-                        "=",
-                        "item.CenterX()+50"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "MettreY"
-                      },
-                      "parameters": [
-                        "buttonPrompt",
-                        "=",
-                        "item.Y()"
-                      ]
-                    },
-                    {
-                      "type": {
                         "value": "BBText::SetBBText"
                       },
                       "parameters": [
                         "buttonPrompt",
                         "=",
-                        "\"[size=18]Knife[/size]\""
+                        "\"[size=14][i]Knife[/i][/size]\""
                       ]
-                    },
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Health Potion",
+              "comment2": ""
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "item",
+                    "itemType",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
                     {
                       "type": {
-                        "value": "Tween::AddObjectOpacityTween"
+                        "value": "ChangeAnimation"
                       },
                       "parameters": [
-                        "buttonPrompt",
-                        "Tween",
-                        "\"bpV\"",
-                        "255",
-                        "\"linear\"",
-                        "300",
-                        ""
+                        "item",
+                        "=",
+                        "1"
                       ]
                     }
                   ]
@@ -284,7 +445,6 @@
                   "conditions": [
                     {
                       "type": {
-                        "inverted": true,
                         "value": "Distance"
                       },
                       "parameters": [
@@ -298,32 +458,233 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "Tween::AddObjectOpacityTween"
+                        "value": "BBText::SetBBText"
                       },
                       "parameters": [
                         "buttonPrompt",
-                        "Tween",
-                        "\"bpNV\"",
-                        "0",
-                        "\"linear\"",
-                        "300",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PrimitiveDrawing::FillOpacity"
-                      },
-                      "parameters": [
-                        "buttonPromptShape",
-                        "-",
-                        "55"
+                        "=",
+                        "\"[size=14][i]Health Potion ni boss senggol dong[/i][/size]\""
                       ]
                     }
                   ]
                 }
               ]
             }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "item",
+                "dropped",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ChangeLayer"
+              },
+              "parameters": [
+                "item",
+                "\"UI\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "invBox",
+              "conditions": [],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "TO DO FINISH INV SYSTEM (OH GOD FUCK)",
+                  "comment2": ""
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "invBox",
+                        "invBox_Occupied",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "invBox",
+                            "invBox_id",
+                            "=",
+                            "GlobalVariable(invItemCount)+1"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "MettreAutour"
+                          },
+                          "parameters": [
+                            "item",
+                            "invBox",
+                            "0",
+                            "0"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "item",
+                "dropped",
+                "=",
+                "3"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PrimitiveDrawing::FillOpacity"
+              },
+              "parameters": [
+                "buttonPromptShape",
+                "-",
+                "55"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "buttonPrompt",
+                "Tween",
+                "\"bpNV\"",
+                "0",
+                "\"linear\"",
+                "50",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::AddObjectVariableTween"
+              },
+              "parameters": [
+                "item",
+                "Tween",
+                "\"outlineEffect\"",
+                "effect",
+                "0",
+                "1",
+                "\"linear\"",
+                "300",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": true,
+            "value": "Distance"
+          },
+          "parameters": [
+            "player",
+            "item",
+            "100",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Tween::AddObjectOpacityTween"
+          },
+          "parameters": [
+            "buttonPrompt",
+            "Tween",
+            "\"bpNV\"",
+            "0",
+            "\"linear\"",
+            "50",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::AddObjectVariableTween"
+          },
+          "parameters": [
+            "item",
+            "Tween",
+            "\"outlineEffect\"",
+            "effect",
+            "0",
+            "1",
+            "\"linear\"",
+            "300",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "PrimitiveDrawing::FillOpacity"
+          },
+          "parameters": [
+            "buttonPromptShape",
+            "-",
+            "55"
           ]
         }
       ]

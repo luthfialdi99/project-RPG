@@ -128,6 +128,15 @@
         "name": "knife-1.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "item2-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "item2-1.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -372,6 +381,12 @@
     {
       "folded": true,
       "name": "invOpen",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "invItemCount",
       "type": "number",
       "value": 0
     }

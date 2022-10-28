@@ -1,13 +1,13 @@
 {
-  "b": 209,
+  "b": 61,
   "disableInputWhenNotFocused": true,
   "mangledName": "Untitled_32scene",
   "name": "Untitled scene",
-  "r": 209,
+  "r": 61,
   "standardSortMethod": true,
   "stopSoundsOnStartup": true,
   "title": "",
-  "v": 209,
+  "v": 61,
   "uiSettings": {
     "grid": true,
     "gridType": "rectangular",
@@ -249,8 +249,8 @@
       "name": "item",
       "persistentUuid": "0a66aad6-69ba-449e-b042-2c8487d8b490",
       "width": 32,
-      "x": 384,
-      "y": 416,
+      "x": 448,
+      "y": 288,
       "zOrder": 48,
       "numberProperties": [],
       "stringProperties": [],
@@ -292,6 +292,34 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "item",
+      "persistentUuid": "86cdc88d-73a1-482d-9e3f-b3ad9b4862a6",
+      "width": 32,
+      "x": 320,
+      "y": 480,
+      "zOrder": 51,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "itemType",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "folded": true,
+          "name": "dropped",
+          "type": "number",
+          "value": 1
+        }
+      ]
     }
   ],
   "objects": [
@@ -595,7 +623,20 @@
       "name": "InventoryTexts",
       "tags": "",
       "type": "BBText::BBText",
-      "variables": [],
+      "variables": [
+        {
+          "folded": true,
+          "name": "invText_id",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "invText_desc",
+          "type": "string",
+          "value": ""
+        }
+      ],
       "effects": [],
       "behaviors": [],
       "content": {
@@ -660,6 +701,24 @@
         {
           "folded": true,
           "name": "invBox_id",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "invBox_itemType",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "invBox_itemQty",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "invBox_Occupied",
           "type": "number",
           "value": 0
         }
@@ -829,10 +888,34 @@
           "name": "dropped",
           "type": "number",
           "value": 0
+        },
+        {
+          "folded": true,
+          "name": "effect",
+          "type": "number",
+          "value": 0
         }
       ],
-      "effects": [],
-      "behaviors": [],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "Effect",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "255;255;255"
+          },
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
       "animations": [
         {
           "name": "knife",
@@ -845,6 +928,35 @@
                 {
                   "hasCustomCollisionMask": false,
                   "image": "knife-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "item2",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "item2-1.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
