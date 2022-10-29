@@ -312,6 +312,35 @@
                             "2"
                           ]
                         }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "VarGlobal"
+                              },
+                              "parameters": [
+                                "hint_itemToInventory",
+                                "=",
+                                "0"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ModVarGlobal"
+                              },
+                              "parameters": [
+                                "hint_itemToInventory",
+                                "=",
+                                "1"
+                              ]
+                            }
+                          ]
+                        }
                       ]
                     }
                   ]
@@ -463,7 +492,7 @@
                       "parameters": [
                         "buttonPrompt",
                         "=",
-                        "\"[size=14][i]Health Potion ni boss senggol dong[/i][/size]\""
+                        "\"[size=14][i]Health Potion[/i][/size]\""
                       ]
                     }
                   ]
@@ -495,6 +524,46 @@
               "parameters": [
                 "item",
                 "\"UI\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PrimitiveDrawing::FillOpacity"
+              },
+              "parameters": [
+                "buttonPromptShape",
+                "-",
+                "55"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "buttonPrompt",
+                "Tween",
+                "\"bpNV\"",
+                "0",
+                "\"linear\"",
+                "50",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::AddObjectVariableTween"
+              },
+              "parameters": [
+                "item",
+                "Tween",
+                "\"outlineEffect\"",
+                "effect",
+                "0",
+                "1",
+                "\"linear\"",
+                "300",
+                ""
               ]
             }
           ],
@@ -585,48 +654,7 @@
               ]
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "value": "PrimitiveDrawing::FillOpacity"
-              },
-              "parameters": [
-                "buttonPromptShape",
-                "-",
-                "55"
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::AddObjectOpacityTween"
-              },
-              "parameters": [
-                "buttonPrompt",
-                "Tween",
-                "\"bpNV\"",
-                "0",
-                "\"linear\"",
-                "50",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::AddObjectVariableTween"
-              },
-              "parameters": [
-                "item",
-                "Tween",
-                "\"outlineEffect\"",
-                "effect",
-                "0",
-                "1",
-                "\"linear\"",
-                "300",
-                ""
-              ]
-            }
-          ]
+          "actions": []
         }
       ]
     },

@@ -137,6 +137,24 @@
         "name": "item2-1.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "school-backpack-64.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "school-backpack-64.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "info-104.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "info-104.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -389,6 +407,12 @@
       "name": "invItemCount",
       "type": "number",
       "value": 0
+    },
+    {
+      "folded": true,
+      "name": "hint_itemToInventory",
+      "type": "number",
+      "value": 0
     }
   ],
   "layouts": [
@@ -429,6 +453,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalEvents/item-drop"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/hint-system"
     }
   ],
   "eventsFunctionsExtensions": [
