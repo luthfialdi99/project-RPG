@@ -195,7 +195,7 @@
                 "hintBoxShape",
                 "YPos",
                 "=",
-                "hintIcons.Y()+hintIcons.Height()+3"
+                "hintIcons.Y()+hintIcons.Height()+6"
               ]
             }
           ]

@@ -39,11 +39,28 @@
       "conditions": [
         {
           "type": {
-            "value": "KeyPressed"
+            "value": "BuiltinCommonInstructions::Or"
           },
-          "parameters": [
-            "",
-            "w"
+          "parameters": [],
+          "subInstructions": [
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "w"
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Up"
+              ]
+            }
           ]
         }
       ],
@@ -83,11 +100,28 @@
       "conditions": [
         {
           "type": {
-            "value": "KeyPressed"
+            "value": "BuiltinCommonInstructions::Or"
           },
-          "parameters": [
-            "",
-            "a"
+          "parameters": [],
+          "subInstructions": [
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "a"
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            }
           ]
         }
       ],
@@ -158,11 +192,28 @@
       "conditions": [
         {
           "type": {
-            "value": "KeyPressed"
+            "value": "BuiltinCommonInstructions::Or"
           },
-          "parameters": [
-            "",
-            "s"
+          "parameters": [],
+          "subInstructions": [
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "s"
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Down"
+              ]
+            }
           ]
         }
       ],
@@ -202,11 +253,28 @@
       "conditions": [
         {
           "type": {
-            "value": "KeyPressed"
+            "value": "BuiltinCommonInstructions::Or"
           },
-          "parameters": [
-            "",
-            "d"
+          "parameters": [],
+          "subInstructions": [
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "d"
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "Right"
+              ]
+            }
           ]
         }
       ],
@@ -277,20 +345,62 @@
       "conditions": [
         {
           "type": {
-            "value": "KeyPressed"
+            "value": "BuiltinCommonInstructions::Or"
           },
-          "parameters": [
-            "",
-            "s"
-          ]
-        },
-        {
-          "type": {
-            "value": "KeyPressed"
-          },
-          "parameters": [
-            "",
-            "a"
+          "parameters": [],
+          "subInstructions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::And"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "s"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "a"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::And"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Down"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                }
+              ]
+            }
           ]
         }
       ],
@@ -445,7 +555,556 @@
     {
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [],
-      "actions": []
+      "actions": [
+        {
+          "type": {
+            "value": "RotateTowardAngle"
+          },
+          "parameters": [
+            "slash",
+            "playerAnim.Variable(facing)",
+            "0",
+            ""
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "d"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Right"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "playerAnim",
+                "facing",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "s"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Down"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "playerAnim",
+                "facing",
+                "=",
+                "90"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "a"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "playerAnim",
+                "facing",
+                "=",
+                "180"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "w"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Up"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "playerAnim",
+                "facing",
+                "=",
+                "270"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Angle"
+          },
+          "parameters": [
+            "slash",
+            "=",
+            "0"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetCenter"
+          },
+          "parameters": [
+            "slash",
+            "=",
+            "playerAnim.CenterX()+70",
+            "=",
+            "player.CenterY()-15"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Angle"
+          },
+          "parameters": [
+            "slash",
+            "=",
+            "90"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetCenter"
+          },
+          "parameters": [
+            "slash",
+            "=",
+            "playerAnim.CenterX()",
+            "=",
+            "player.CenterY()+55"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Angle"
+          },
+          "parameters": [
+            "slash",
+            "=",
+            "180"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetCenter"
+          },
+          "parameters": [
+            "slash",
+            "=",
+            "playerAnim.CenterX()-70",
+            "=",
+            "player.CenterY()-15"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Angle"
+          },
+          "parameters": [
+            "slash",
+            "=",
+            "270"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetCenter"
+          },
+          "parameters": [
+            "slash",
+            "=",
+            "playerAnim.CenterX()",
+            "=",
+            "player.CenterY()-70"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarObjet"
+          },
+          "parameters": [
+            "slash",
+            "attacking",
+            "=",
+            "0"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Cache"
+          },
+          "parameters": [
+            "slash"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ChangeAnimation"
+              },
+              "parameters": [
+                "slash",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "slash",
+                "\"attackCD\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "j"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": {
+                "value": "Animation"
+              },
+              "parameters": [
+                "slash",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareObjectTimer"
+              },
+              "parameters": [
+                "slash",
+                "\"attackCD\"",
+                ">",
+                "GlobalVariable(player_AttackCD)"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "slash",
+                "attacking",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarObjet"
+          },
+          "parameters": [
+            "slash",
+            "attacking",
+            "=",
+            "1"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Montre"
+          },
+          "parameters": [
+            "slash",
+            ""
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Animation"
+              },
+              "parameters": [
+                "slash",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ChangeAnimation"
+              },
+              "parameters": [
+                "slash",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Animation"
+              },
+              "parameters": [
+                "slash",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimationEnded"
+              },
+              "parameters": [
+                "slash"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "slash",
+                    "attacking",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "type": "BuiltinCommonInstructions::Comment",

@@ -4,16 +4,394 @@
   "name": "enemy-AI",
   "events": [
     {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
-    },
-    {
       "type": "BuiltinCommonInstructions::ForEach",
       "object": "enemy",
       "conditions": [],
       "actions": [],
       "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "enemy",
+                "damaged",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ActivateBehavior"
+              },
+              "parameters": [
+                "enemy",
+                "Pathfinding",
+                "yes"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "enemy",
+                "slash",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Animation"
+                  },
+                  "parameters": [
+                    "slash",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "damaged",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "damaged",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "enemy",
+                "damaged",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ActivateBehavior"
+              },
+              "parameters": [
+                "enemy",
+                "Pathfinding",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "health",
+                    "-",
+                    "GlobalVariable(player_TotalDamage)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "damaged",
+                    "=",
+                    "2"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "enemy",
+                "damaged",
+                "=",
+                "3"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Angle"
+                  },
+                  "parameters": [
+                    "slash",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectPositionTween"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "Tween",
+                    "\"knockedBack\"",
+                    "slash.CenterX()+RandomInRange(90,100)",
+                    "enemy.Y()",
+                    "\"easeOutQuad\"",
+                    "200",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "damaged",
+                    "=",
+                    "4"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Angle"
+                  },
+                  "parameters": [
+                    "slash",
+                    "=",
+                    "90"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectPositionTween"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "Tween",
+                    "\"knockedBack\"",
+                    "enemy.X()",
+                    "slash.CenterY()+RandomInRange(90,100)",
+                    "\"easeOutQuad\"",
+                    "200",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "damaged",
+                    "=",
+                    "4"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Angle"
+                  },
+                  "parameters": [
+                    "slash",
+                    "=",
+                    "180"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectPositionTween"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "Tween",
+                    "\"knockedBack\"",
+                    "slash.CenterX()-RandomInRange(90,100)",
+                    "enemy.Y()",
+                    "\"easeOutQuad\"",
+                    "200",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "damaged",
+                    "=",
+                    "4"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Angle"
+                  },
+                  "parameters": [
+                    "slash",
+                    "=",
+                    "270"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectPositionTween"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "Tween",
+                    "\"knockedBack\"",
+                    "enemy.X()",
+                    "slash.CenterY()-RandomInRange(90,100)",
+                    "\"easeOutQuad\"",
+                    "200",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "damaged",
+                    "=",
+                    "4"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "enemy",
+                "damaged",
+                "=",
+                "4"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "Tween",
+                    "\"knockedBack\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "damaged",
+                    "=",
+                    "5"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
@@ -95,6 +473,95 @@
                     "=",
                     "enemy.Y()"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "health",
+                    "=",
+                    "100"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "damaged",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeAnimation"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "damaged",
+                    "=",
+                    "3"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "damaged",
+                    "=",
+                    "5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeAnimation"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "damaged",
+                    "=",
+                    "0"
+                  ]
                 }
               ]
             },
@@ -110,35 +577,6 @@
               },
               "comment": "type 0 AI",
               "comment2": ""
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "CollisionNP"
-                  },
-                  "parameters": [
-                    "enemy",
-                    "enemy",
-                    "",
-                    "",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SeparateFromObjects"
-                  },
-                  "parameters": [
-                    "enemy",
-                    "enemy",
-                    ""
-                  ]
-                }
-              ]
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -234,6 +672,60 @@
                       "parameters": [
                         "enemy",
                         "yes"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "CenterY"
+                      },
+                      "parameters": [
+                        "enemy",
+                        ">",
+                        "playerAnim.Y()+playerAnim.Height()"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "enemy",
+                        "=",
+                        "playerAnim.ZOrder()+1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "CenterY"
+                      },
+                      "parameters": [
+                        "enemy",
+                        "<",
+                        "playerAnim.Y()"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "enemy",
+                        "=",
+                        "playerAnim.ZOrder()-1"
                       ]
                     }
                   ]
@@ -453,6 +945,21 @@
           ]
         }
       ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
     }
   ]
 }
