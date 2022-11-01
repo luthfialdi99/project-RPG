@@ -5,8 +5,65 @@
   "events": [
     {
       "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "dialogueArrow",
+            "dialogue.CenterX()",
+            "dialogue.CenterY()",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetSize"
+          },
+          "parameters": [
+            "dialogueArrow",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "type": {
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "dialogueArrow",
+            "=",
+            "dialogue.ZOrder()+1"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
       "conditions": [],
       "actions": [
+        {
+          "type": {
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "dialogueShape",
+            "=",
+            "dialogue.ZOrder()-1"
+          ]
+        },
         {
           "type": {
             "value": "Cache"
@@ -43,16 +100,6 @@
             "NPC.CenterX()",
             "=",
             "NPC.CenterY()-NPCAnim.Height()-30"
-          ]
-        },
-        {
-          "type": {
-            "value": "ChangePlan"
-          },
-          "parameters": [
-            "dialogueShape",
-            "=",
-            "dialogue.ZOrder()-1"
           ]
         }
       ],
@@ -124,6 +171,33 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetCenter"
+              },
+              "parameters": [
+                "dialogueArrow",
+                "=",
+                "dialogue.CenterX()",
+                "=",
+                "15+dialogue.CenterY()+dialogue.Height()/2"
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "dialogueArrow",
+                ""
+              ]
+            }
+          ]
         }
       ]
     },
@@ -161,6 +235,14 @@
           },
           "parameters": [
             "dialogueBoxes_lr"
+          ]
+        },
+        {
+          "type": {
+            "value": "Cache"
+          },
+          "parameters": [
+            "dialogueArrow"
           ]
         }
       ]

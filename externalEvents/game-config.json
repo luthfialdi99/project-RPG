@@ -5,19 +5,17 @@
   "events": [
     {
       "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": [
+      "conditions": [
         {
           "type": {
-            "value": "SetWindowSize"
+            "value": "DepartScene"
           },
           "parameters": [
-            "",
-            "GlobalVariable(resWidth)",
-            "GlobalVariable(resHeight)",
-            "no"
+            ""
           ]
-        },
+        }
+      ],
+      "actions": [
         {
           "type": {
             "value": "AdvancedWindow::SetMaximizable"
@@ -25,27 +23,6 @@
           "parameters": [
             "no",
             ""
-          ]
-        },
-        {
-          "type": {
-            "value": "AdvancedWindow::SetResizable"
-          },
-          "parameters": [
-            "no",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "MettreXY"
-          },
-          "parameters": [
-            "debugText",
-            "=",
-            "10",
-            "=",
-            "10"
           ]
         },
         {
@@ -63,6 +40,28 @@
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [],
       "actions": [
+        {
+          "type": {
+            "value": "SetGameResolutionSize"
+          },
+          "parameters": [
+            "",
+            "GlobalVariable(resWidth)",
+            "GlobalVariable(resHeight)"
+          ]
+        },
+        {
+          "type": {
+            "value": "MettreXY"
+          },
+          "parameters": [
+            "debugText",
+            "=",
+            "10",
+            "=",
+            "10"
+          ]
+        },
         {
           "type": {
             "value": "Cache"
@@ -115,6 +114,100 @@
             "debugText",
             "=",
             "\"[size=12][color=white][outline=black]invBox_id = \"+invBox.VariableString(invBox_id)+\"\nX = \"+ToString(invBox.X())+\"\ninvBox_Occupied = \"+invBox.VariableString(invBox_Occupied)+\"[/outline][/color][/size]\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarGlobal"
+          },
+          "parameters": [
+            "fullscreen",
+            "=",
+            "0"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "AdvancedWindow::SetResizable"
+          },
+          "parameters": [
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetWindowSize"
+          },
+          "parameters": [
+            "",
+            "GlobalVariable(resWidth)",
+            "GlobalVariable(resHeight)",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetFullScreen"
+          },
+          "parameters": [
+            "",
+            "",
+            "no"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarGlobal"
+          },
+          "parameters": [
+            "fullscreen",
+            "=",
+            "1"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "AdvancedWindow::SetResizable"
+          },
+          "parameters": [
+            "yes",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetWindowSize"
+          },
+          "parameters": [
+            "",
+            "ScreenWidth()",
+            "ScreenHeight()",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetFullScreen"
+          },
+          "parameters": [
+            "",
+            "yes",
+            "no"
           ]
         }
       ]

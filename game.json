@@ -14,7 +14,7 @@
     "pixelsRounding": false,
     "projectUuid": "de68c8f8-dfa0-4a88-939b-6f1143d939e4",
     "scaleMode": "nearest",
-    "sizeOnStartupMode": "adaptWidth",
+    "sizeOnStartupMode": "",
     "templateSlug": "",
     "useExternalSourceFiles": false,
     "version": "1.0.0",
@@ -191,6 +191,60 @@
         "name": "enemy-1-0.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "enemy-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "enemy-1-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "enemy-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "enemy-2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "enemy-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "enemy-3.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "DialogueArrow-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "DialogueArrow-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "checkbox-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "checkbox-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "checkbox2-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "checkbox2-1.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -202,7 +256,14 @@
       "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "folded": true,
+          "name": "damaged",
+          "type": "number",
+          "value": 0
+        }
+      ],
       "effects": [],
       "behaviors": [
         {
@@ -263,6 +324,12 @@
         {
           "folded": true,
           "name": "facing",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "flicker",
           "type": "number",
           "value": 0
         }
@@ -429,6 +496,12 @@
   "variables": [
     {
       "folded": true,
+      "name": "fullscreen",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
       "name": "resWidth",
       "type": "number",
       "value": 800
@@ -468,12 +541,28 @@
       "name": "player_TotalDamage",
       "type": "number",
       "value": 50
+    },
+    {
+      "folded": true,
+      "name": "player_Health",
+      "type": "number",
+      "value": 100
+    },
+    {
+      "folded": true,
+      "name": "player_Stamina",
+      "type": "number",
+      "value": 100
     }
   ],
   "layouts": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/untitled-scene"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/options"
     }
   ],
   "externalEvents": [

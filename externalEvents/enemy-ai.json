@@ -22,6 +22,17 @@
                 "=",
                 "0"
               ]
+            },
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "enemy",
+                "attacking",
+                "=",
+                "0"
+              ]
             }
           ],
           "actions": [
@@ -114,6 +125,17 @@
           "actions": [
             {
               "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "enemy",
+                "inPursuit",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
                 "value": "ActivateBehavior"
               },
               "parameters": [
@@ -194,7 +216,7 @@
                     "enemy",
                     "Tween",
                     "\"knockedBack\"",
-                    "slash.CenterX()+RandomInRange(90,100)",
+                    "slash.CenterX()+90",
                     "enemy.Y()",
                     "\"easeOutQuad\"",
                     "200",
@@ -238,7 +260,7 @@
                     "Tween",
                     "\"knockedBack\"",
                     "enemy.X()",
-                    "slash.CenterY()+RandomInRange(90,100)",
+                    "slash.CenterY()+90",
                     "\"easeOutQuad\"",
                     "200",
                     ""
@@ -280,7 +302,7 @@
                     "enemy",
                     "Tween",
                     "\"knockedBack\"",
-                    "slash.CenterX()-RandomInRange(90,100)",
+                    "slash.CenterX()-180",
                     "enemy.Y()",
                     "\"easeOutQuad\"",
                     "200",
@@ -324,7 +346,7 @@
                     "Tween",
                     "\"knockedBack\"",
                     "enemy.X()",
-                    "slash.CenterY()-RandomInRange(90,100)",
+                    "slash.CenterY()-180",
                     "\"easeOutQuad\"",
                     "200",
                     ""
@@ -483,6 +505,17 @@
                     "health",
                     "=",
                     "100"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "totalDamage",
+                    "=",
+                    "5"
                   ]
                 }
               ]
@@ -811,8 +844,8 @@
                         "enemy",
                         "Pathfinding",
                         "",
-                        "player.X()",
-                        "player.Y()"
+                        "RandomInRange(playerAnim.X(),playerAnim.X()+playerAnim.Width())",
+                        "RandomInRange(playerAnim.Y(),playerAnim.Y()+playerAnim.Height())"
                       ]
                     },
                     {
@@ -829,6 +862,301 @@
               ]
             },
             {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Type 0 Attacking",
+              "comment2": ""
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Distance"
+                  },
+                  "parameters": [
+                    "playerAnim",
+                    "enemy",
+                    "50",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "damaged",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "enemy",
+                        "attacking",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "enemy",
+                        "attacking",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "attacking",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ActivateBehavior"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "Pathfinding",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeAnimation"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "=",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetObjectTimer"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "\"attackCD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "attacking",
+                    "=",
+                    "2"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "attacking",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Distance"
+                      },
+                      "parameters": [
+                        "playerAnim",
+                        "enemy",
+                        "50",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Sprite"
+                      },
+                      "parameters": [
+                        "enemy",
+                        "=",
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "player",
+                        "damaged",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarGlobal"
+                      },
+                      "parameters": [
+                        "player_Health",
+                        "-",
+                        "enemy.Variable(totalDamage)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "player",
+                        "damaged",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "CompareObjectTimer"
+                      },
+                      "parameters": [
+                        "enemy",
+                        "\"attackCD\"",
+                        ">",
+                        "0.8"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AnimationEnded"
+                      },
+                      "parameters": [
+                        "enemy"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangeAnimation"
+                      },
+                      "parameters": [
+                        "enemy",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ActivateBehavior"
+                      },
+                      "parameters": [
+                        "enemy",
+                        "Pathfinding",
+                        "yes"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "enemy",
+                        "attacking",
+                        "=",
+                        "3"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "attacking",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "attacking",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -837,7 +1165,7 @@
                     "value": "Distance"
                   },
                   "parameters": [
-                    "player",
+                    "playerAnim",
                     "enemy",
                     "350",
                     ""
