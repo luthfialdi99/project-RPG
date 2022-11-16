@@ -654,7 +654,18 @@
               ]
             }
           ],
-          "actions": []
+          "actions": [
+            {
+              "type": {
+                "value": "SetCenterY"
+              },
+              "parameters": [
+                "item",
+                "=",
+                "invBox.CenterY()"
+              ]
+            }
+          ]
         }
       ]
     },

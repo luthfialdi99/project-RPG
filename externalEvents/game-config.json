@@ -85,7 +85,7 @@
           "parameters": [
             "debugText",
             "=",
-            "\"[b][color=yellow][outline=black]\"+ToString(round(1/TimeDelta()))+\"[/b][/color][/outline]\""
+            "\"[b][color=yellow][outline=black]\"+ToString(round(1/TimeDelta()))+\"[/b][/color][/outline]\"+\"\neffectStack: \"+damageEffects.VariableString(effectStack)"
           ]
         }
       ]

@@ -245,6 +245,78 @@
         "name": "checkbox2-1.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "volumeIcon-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "volumeIcon-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "enemydead-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "enemydead-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "enemydead-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "enemydead-2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "enemydead-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "enemydead-3.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "enemydead-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "enemydead-4.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "red-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "red-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "burned-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "burned-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "poisoned-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "poisoned-1.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -260,6 +332,12 @@
         {
           "folded": true,
           "name": "damaged",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "healthBarActive",
           "type": "number",
           "value": 0
         }
@@ -514,6 +592,18 @@
     },
     {
       "folded": true,
+      "name": "volume_music",
+      "type": "number",
+      "value": 50
+    },
+    {
+      "folded": true,
+      "name": "volume_sfx",
+      "type": "number",
+      "value": 50
+    },
+    {
+      "folded": true,
       "name": "invOpen",
       "type": "number",
       "value": 0
@@ -553,6 +643,18 @@
       "name": "player_Stamina",
       "type": "number",
       "value": 100
+    },
+    {
+      "folded": true,
+      "name": "player_attackEnabled",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "player_Name",
+      "type": "string",
+      "value": "KALA"
     }
   ],
   "layouts": [
@@ -601,6 +703,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalEvents/hint-system"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/hazard-system"
     }
   ],
   "eventsFunctionsExtensions": [
