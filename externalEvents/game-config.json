@@ -31,7 +31,7 @@
           },
           "parameters": [
             "debugText",
-            "\"HUD\""
+            "\"debug\""
           ]
         }
       ]
@@ -85,7 +85,7 @@
           "parameters": [
             "debugText",
             "=",
-            "\"[b][color=yellow][outline=black]\"+ToString(round(1/TimeDelta()))+\"[/b][/color][/outline]\"+\"\neffectStack: \"+damageEffects.VariableString(effectStack)"
+            "\"[b][color=yellow][outline=black]\"+ToString(round(1/TimeDelta()))+\"\neffectStack: \"+damageEffects.VariableString(effectStack)+\"\n(global)invItemCount: \"+GlobalVariableString(invItemCount)+\"\n(global)player_AttackEnabled: \"+GlobalVariableString(player_attackEnabled)+\"[/b][/color][/outline]\""
           ]
         }
       ]
@@ -113,7 +113,7 @@
           "parameters": [
             "debugText",
             "=",
-            "\"[size=12][color=white][outline=black]invBox_id = \"+invBox.VariableString(invBox_id)+\"\nX = \"+ToString(invBox.X())+\"\ninvBox_Occupied = \"+invBox.VariableString(invBox_Occupied)+\"[/outline][/color][/size]\""
+            "\"[size=12][color=white][outline=black]invBox_id = \"+invBox.VariableString(invBox_id)+\"\nX = \"+ToString(invBox.X())+\"\ninvBox_Occupied = \"+invBox.VariableString(invBox_Occupied)+\"\ninvBox_Equipped: \"+invBox.VariableString(invBox_Equipped)+\"[/outline][/color][/size]\""
           ]
         }
       ]

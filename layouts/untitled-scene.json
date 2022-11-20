@@ -408,6 +408,34 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "item",
+      "persistentUuid": "aa947b63-c4f0-4386-b197-7ae6c6dc2e8e",
+      "width": 32,
+      "x": 508.5714416503906,
+      "y": 464.28570556640625,
+      "zOrder": 51,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "itemType",
+          "type": "number",
+          "value": 2
+        },
+        {
+          "folded": true,
+          "name": "dropped",
+          "type": "number",
+          "value": 1
+        }
+      ]
     }
   ],
   "objects": [
@@ -979,8 +1007,8 @@
       "behaviors": [
         {
           "name": "Pathfinding",
-          "smoothingMaxCellGap": 1,
           "type": "PathfindingBehavior::PathfindingBehavior",
+          "smoothingMaxCellGap": 1,
           "acceleration": 400,
           "allowDiagonals": true,
           "angleOffset": 0,
@@ -2191,6 +2219,37 @@
         "align": "left",
         "wordWrap": true
       }
+    },
+    {
+      "assetStoreId": "",
+      "name": "invDropDownActionShape",
+      "tags": "",
+      "type": "PrimitiveDrawing::Drawer",
+      "variables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "fillOpacity": 255,
+      "outlineSize": 0,
+      "outlineOpacity": 255,
+      "fillColor": {
+        "b": 74,
+        "g": 74,
+        "r": 74
+      },
+      "outlineColor": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "absoluteCoordinates": false,
+      "clearBetweenFrames": true
     }
   ],
   "events": [
@@ -2306,6 +2365,17 @@
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
       "name": "UI",
+      "visibility": true,
+      "cameras": [],
+      "effects": []
+    },
+    {
+      "ambientLightColorB": 10678936,
+      "ambientLightColorG": 6054000,
+      "ambientLightColorR": 10838080,
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "name": "debug",
       "visibility": true,
       "cameras": [],
       "effects": []

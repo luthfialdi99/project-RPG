@@ -670,6 +670,12 @@
       "name": "item_autoEquip",
       "type": "number",
       "value": 1
+    },
+    {
+      "folded": true,
+      "name": "item_toDrop",
+      "type": "number",
+      "value": 0
     }
   ],
   "layouts": [
