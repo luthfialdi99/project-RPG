@@ -70,6 +70,16 @@
             "ScreenWidth()",
             "ScreenHeight()"
           ]
+        },
+        {
+          "type": {
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "inventoryBackground",
+            "=",
+            "-1"
+          ]
         }
       ]
     },
@@ -272,6 +282,376 @@
             "2",
             "0",
             "\"UI\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "invItemEquipText",
+            "1",
+            "0",
+            "\"UI\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "invItemEquipShape",
+            "1",
+            "0",
+            "\"UI\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "InvDropDownActionText",
+            "1",
+            "0",
+            "\"UI\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "InvDropDownActionText",
+            "2",
+            "0",
+            "\"UI\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": "invDropDownActionText visual (scroll down to see further drop down action code)",
+      "comment2": ""
+    },
+    {
+      "type": "BuiltinCommonInstructions::ForEach",
+      "object": "InvDropDownActionText",
+      "conditions": [],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "InvDropDownActionText",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "InvDropDownActionText",
+                "id",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "InvDropDownActionText",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "InvDropDownActionText",
+                "id",
+                "=",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "invBox",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "InvDropDownActionText"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": "item equip visual (scroll down to see item equip activation)",
+      "comment2": ""
+    },
+    {
+      "type": "BuiltinCommonInstructions::ForEach",
+      "object": "invItemEquipText",
+      "conditions": [],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "invItemEquipText",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "invItemEquipText",
+                "id",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "invItemEquipText",
+                "id",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "InventoryTexts",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "InventoryTexts",
+                    "invText_id",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "invItemEquipText",
+                    "=",
+                    "InventoryTexts.X()+InventoryTexts.Width()+10",
+                    "=",
+                    "InventoryTexts.Y()+7"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::ForEach",
+      "object": "invItemEquipShape",
+      "conditions": [],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "invItemEquipShape",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "invItemEquipShape",
+                "id",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "invItemEquipShape",
+                "id",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PrimitiveDrawing::RoundedRectangle"
+              },
+              "parameters": [
+                "invItemEquipShape",
+                "invItemEquipText.X()",
+                "invItemEquipText.Y()",
+                "invItemEquipText.X()+invItemEquipText.Width()",
+                "invItemEquipText.Y()+invItemEquipText.Height()",
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "invItemEquipShape",
+                "=",
+                "invItemEquipText.ZOrder()-1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "LayerVisible"
+              },
+              "parameters": [
+                "",
+                "\"UI\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "invItemEquipText",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
+            }
           ]
         }
       ]
@@ -2277,7 +2657,7 @@
                         "invBox",
                         "invBox_itemType",
                         "=",
-                        "0"
+                        "1"
                       ]
                     }
                   ],
@@ -2354,7 +2734,7 @@
                         "invBox",
                         "invBox_itemType",
                         "=",
-                        "1"
+                        "2"
                       ]
                     }
                   ],
@@ -2414,6 +2794,599 @@
                             "invText_desc",
                             "=",
                             "\"This item replenish your health. This item replenish your health. This item replenish your health.This item replenish your health. This item replenish your health. This item replenish your health. This item replenish your health. This item replenish your health. This item replenish your health.\""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "item equippable?",
+                  "comment2": ""
+                },
+                {
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "invItemEquipText",
+                  "conditions": [],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "invBox",
+                            "invBox_itemType",
+                            "=",
+                            "1"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "VarObjet"
+                              },
+                              "parameters": [
+                                "invItemEquipText",
+                                "id",
+                                "=",
+                                "1"
+                              ]
+                            }
+                          ],
+                          "actions": [],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "VarObjet"
+                                  },
+                                  "parameters": [
+                                    "invBox",
+                                    "invBox_Equipped",
+                                    "=",
+                                    "1"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "BBText::SetBBText"
+                                  },
+                                  "parameters": [
+                                    "invItemEquipText",
+                                    "=",
+                                    "\"[i]equipped[/i]\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "PrimitiveDrawing::FillColor"
+                                  },
+                                  "parameters": [
+                                    "invItemEquipShape",
+                                    "\"74;74;74\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BBText::SetColor"
+                                  },
+                                  "parameters": [
+                                    "invItemEquipText",
+                                    "\"255;255;255\""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "VarObjet"
+                                  },
+                                  "parameters": [
+                                    "invBox",
+                                    "invBox_Equipped",
+                                    "=",
+                                    "0"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "BBText::SetBBText"
+                                  },
+                                  "parameters": [
+                                    "invItemEquipText",
+                                    "=",
+                                    "\"[i]equippable[/i]\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "PrimitiveDrawing::FillColor"
+                                  },
+                                  "parameters": [
+                                    "invItemEquipShape",
+                                    "\"255;255;255\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BBText::SetColor"
+                                  },
+                                  "parameters": [
+                                    "invItemEquipText",
+                                    "\"0;0;0\""
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "invBox",
+                            "invBox_itemType",
+                            "=",
+                            "2"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "VarObjet"
+                              },
+                              "parameters": [
+                                "invItemEquipText",
+                                "id",
+                                "=",
+                                "1"
+                              ]
+                            }
+                          ],
+                          "actions": [],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "VarObjet"
+                                  },
+                                  "parameters": [
+                                    "invBox",
+                                    "invBox_Equipped",
+                                    "=",
+                                    "0"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "BBText::SetBBText"
+                                  },
+                                  "parameters": [
+                                    "invItemEquipText",
+                                    "=",
+                                    "\"[i]consumable[/i]\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "PrimitiveDrawing::FillColor"
+                                  },
+                                  "parameters": [
+                                    "invItemEquipShape",
+                                    "\"255;255;255\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BBText::SetColor"
+                                  },
+                                  "parameters": [
+                                    "invItemEquipText",
+                                    "\"0;0;0\""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "VarObjet"
+                                  },
+                                  "parameters": [
+                                    "invBox",
+                                    "invBox_Equipped",
+                                    "=",
+                                    "1"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "BBText::SetBBText"
+                                  },
+                                  "parameters": [
+                                    "invItemEquipText",
+                                    "=",
+                                    "\"[i]used[/i]\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "PrimitiveDrawing::FillColor"
+                                  },
+                                  "parameters": [
+                                    "invItemEquipShape",
+                                    "\"74;74;74\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BBText::SetColor"
+                                  },
+                                  "parameters": [
+                                    "invItemEquipText",
+                                    "\"255;255;255\""
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "drop down actions",
+                  "comment2": ""
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "invBox",
+                            "invBox_itemType",
+                            "=",
+                            "1"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Montre"
+                          },
+                          "parameters": [
+                            "InvDropDownActionText",
+                            ""
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::ForEach",
+                          "object": "InvDropDownActionText",
+                          "conditions": [],
+                          "actions": [],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "VarObjet"
+                                  },
+                                  "parameters": [
+                                    "InvDropDownActionText",
+                                    "id",
+                                    "=",
+                                    "1"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "MettreXY"
+                                  },
+                                  "parameters": [
+                                    "InvDropDownActionText",
+                                    "=",
+                                    "invBox.X()",
+                                    "=",
+                                    "invBox.Y()+invBox.Height()"
+                                  ]
+                                }
+                              ],
+                              "events": [
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "VarObjet"
+                                      },
+                                      "parameters": [
+                                        "invBox",
+                                        "invBox_Equipped",
+                                        "=",
+                                        "0"
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "BBText::SetBBText"
+                                      },
+                                      "parameters": [
+                                        "InvDropDownActionText",
+                                        "=",
+                                        "\"Equip\""
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "VarObjet"
+                                      },
+                                      "parameters": [
+                                        "invBox",
+                                        "invBox_Equipped",
+                                        "=",
+                                        "1"
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "BBText::SetBBText"
+                                      },
+                                      "parameters": [
+                                        "InvDropDownActionText",
+                                        "=",
+                                        "\"Unequip\""
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "VarObjet"
+                                  },
+                                  "parameters": [
+                                    "InvDropDownActionText",
+                                    "id",
+                                    "=",
+                                    "2"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "MettreXY"
+                                  },
+                                  "parameters": [
+                                    "InvDropDownActionText",
+                                    "=",
+                                    "invBox.X()",
+                                    "=",
+                                    "invBox.Y()+invBox.Height()+InvDropDownActionText.Height()"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BBText::SetBBText"
+                                  },
+                                  "parameters": [
+                                    "InvDropDownActionText",
+                                    "=",
+                                    "\"Drop item\""
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "invBox",
+                            "invBox_itemType",
+                            "=",
+                            "2"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Montre"
+                          },
+                          "parameters": [
+                            "InvDropDownActionText",
+                            ""
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::ForEach",
+                          "object": "InvDropDownActionText",
+                          "conditions": [],
+                          "actions": [],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "VarObjet"
+                                  },
+                                  "parameters": [
+                                    "InvDropDownActionText",
+                                    "id",
+                                    "=",
+                                    "1"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "MettreXY"
+                                  },
+                                  "parameters": [
+                                    "InvDropDownActionText",
+                                    "=",
+                                    "invBox.X()",
+                                    "=",
+                                    "invBox.Y()+invBox.Height()"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BBText::SetBBText"
+                                  },
+                                  "parameters": [
+                                    "InvDropDownActionText",
+                                    "=",
+                                    "\"Consume\""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "VarObjet"
+                                  },
+                                  "parameters": [
+                                    "InvDropDownActionText",
+                                    "id",
+                                    "=",
+                                    "2"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "MettreXY"
+                                  },
+                                  "parameters": [
+                                    "InvDropDownActionText",
+                                    "=",
+                                    "invBox.X()",
+                                    "=",
+                                    "invBox.Y()+invBox.Height()+InvDropDownActionText.Height()"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BBText::SetBBText"
+                                  },
+                                  "parameters": [
+                                    "InvDropDownActionText",
+                                    "=",
+                                    "\"Drop item\""
+                                  ]
+                                }
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -2547,7 +3520,7 @@
                         "invBox",
                         "invBox_itemType",
                         "=",
-                        "0"
+                        "1"
                       ]
                     }
                   ],
@@ -2558,26 +3531,173 @@
                       "conditions": [
                         {
                           "type": {
-                            "value": "VarGlobal"
+                            "value": "VarObjet"
                           },
                           "parameters": [
-                            "player_attackEnabled",
-                            "=",
-                            "0"
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "ModVarGlobal"
-                          },
-                          "parameters": [
-                            "player_attackEnabled",
+                            "invBox",
+                            "invBox_Equipped",
                             "=",
                             "1"
                           ]
                         }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "VarGlobal"
+                              },
+                              "parameters": [
+                                "player_attackEnabled",
+                                "=",
+                                "0"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ModVarGlobal"
+                              },
+                              "parameters": [
+                                "player_attackEnabled",
+                                "=",
+                                "1"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "automatic item equip",
+                  "comment2": ""
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "invBox",
+                        "invBox_Equipped",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangeAnimation"
+                      },
+                      "parameters": [
+                        "invBox",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "invBox",
+                            "invBox_itemType",
+                            "=",
+                            "1"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "VarGlobal"
+                              },
+                              "parameters": [
+                                "item_autoEquip",
+                                "=",
+                                "1"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ModVarObjet"
+                              },
+                              "parameters": [
+                                "invBox",
+                                "invBox_Equipped",
+                                "=",
+                                "1"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ModVarGlobal"
+                              },
+                              "parameters": [
+                                "item_autoEquip",
+                                "=",
+                                "0"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "invBox",
+                        "invBox_Equipped",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangeAnimation"
+                      },
+                      "parameters": [
+                        "invBox",
+                        "=",
+                        "1"
                       ]
                     }
                   ]

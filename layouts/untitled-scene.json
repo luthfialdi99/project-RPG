@@ -242,6 +242,12 @@
       "initialVariables": [
         {
           "folded": true,
+          "name": "itemType",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "folded": true,
           "name": "dropped",
           "type": "number",
           "value": 1
@@ -296,7 +302,7 @@
           "folded": true,
           "name": "itemType",
           "type": "number",
-          "value": 1
+          "value": 2
         },
         {
           "folded": true,
@@ -810,6 +816,12 @@
           "name": "invBox_Occupied",
           "type": "number",
           "value": 0
+        },
+        {
+          "folded": true,
+          "name": "invBox_Equipped",
+          "type": "number",
+          "value": 0
         }
       ],
       "effects": [],
@@ -826,6 +838,35 @@
                 {
                   "hasCustomCollisionMask": false,
                   "image": "left-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "invBox_equip",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "invBox_equip-1.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -938,6 +979,7 @@
       "behaviors": [
         {
           "name": "Pathfinding",
+          "smoothingMaxCellGap": 1,
           "type": "PathfindingBehavior::PathfindingBehavior",
           "acceleration": 400,
           "allowDiagonals": true,
@@ -2066,6 +2108,89 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "invItemEquipText",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "text": "invItemEquipText",
+        "opacity": 255,
+        "fontSize": 16,
+        "visible": true,
+        "color": "0;0;0",
+        "fontFamily": "Arial",
+        "align": "left",
+        "wordWrap": true
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "invItemEquipShape",
+      "tags": "",
+      "type": "PrimitiveDrawing::Drawer",
+      "variables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "fillOpacity": 255,
+      "outlineSize": 0,
+      "outlineOpacity": 255,
+      "fillColor": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "outlineColor": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "absoluteCoordinates": true,
+      "clearBetweenFrames": true
+    },
+    {
+      "assetStoreId": "",
+      "name": "InvDropDownActionText",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "text": "InvDropDownActionText",
+        "opacity": 255,
+        "fontSize": 18,
+        "visible": true,
+        "color": "255;255;255",
+        "fontFamily": "Arial",
+        "align": "left",
+        "wordWrap": true
+      }
     }
   ],
   "events": [

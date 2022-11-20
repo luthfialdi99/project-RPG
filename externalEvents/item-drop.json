@@ -29,6 +29,17 @@
             "=",
             "buttonPrompt.ZOrder()-1"
           ]
+        },
+        {
+          "type": {
+            "value": "SetEffectDoubleParameter"
+          },
+          "parameters": [
+            "item",
+            "\"Effect\"",
+            "\"thickness\"",
+            "0"
+          ]
         }
       ]
     },
@@ -132,19 +143,7 @@
                   ]
                 }
               ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetEffectDoubleParameter"
-                  },
-                  "parameters": [
-                    "item",
-                    "\"Effect\"",
-                    "\"thickness\"",
-                    "item.Variable(effect)"
-                  ]
-                }
-              ],
+              "actions": [],
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Standard",
@@ -235,6 +234,17 @@
                     }
                   ],
                   "actions": [
+                    {
+                      "type": {
+                        "value": "SetEffectDoubleParameter"
+                      },
+                      "parameters": [
+                        "item",
+                        "\"Effect\"",
+                        "\"thickness\"",
+                        "item.Variable(effect)"
+                      ]
+                    },
                     {
                       "type": {
                         "value": "MettreX"
@@ -371,7 +381,7 @@
                     "item",
                     "itemType",
                     "=",
-                    "0"
+                    "1"
                   ]
                 }
               ],
@@ -447,7 +457,7 @@
                     "item",
                     "itemType",
                     "=",
-                    "1"
+                    "2"
                   ]
                 }
               ],
@@ -584,7 +594,7 @@
                     "textG": 0,
                     "textR": 0
                   },
-                  "comment": "TO DO FINISH INV SYSTEM (OH GOD FUCK)",
+                  "comment": "insert item to inventory",
                   "comment2": ""
                 },
                 {

@@ -317,6 +317,15 @@
         "name": "poisoned-1.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "invBox_equip-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "invBox_equip-1.png",
+        "smoothed": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -655,6 +664,12 @@
       "name": "player_Name",
       "type": "string",
       "value": "KALA"
+    },
+    {
+      "folded": true,
+      "name": "item_autoEquip",
+      "type": "number",
+      "value": 1
     }
   ],
   "layouts": [
