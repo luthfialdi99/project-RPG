@@ -1,8 +1,8 @@
 {
   "b": 61,
   "disableInputWhenNotFocused": true,
-  "mangledName": "Untitled_32scene",
-  "name": "Untitled scene",
+  "mangledName": "apartment",
+  "name": "apartment",
   "r": 61,
   "standardSortMethod": true,
   "stopSoundsOnStartup": true,
@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.6999999938964843,
+    "zoomFactor": 0.6507999938964841,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -32,39 +32,9 @@
       "name": "player",
       "persistentUuid": "5011d56a-6a35-49ef-ae36-8f4b7009cd7e",
       "width": 48,
-      "x": 288,
-      "y": 320,
+      "x": 1136,
+      "y": 160,
       "zOrder": 1,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "name": "objects",
-      "persistentUuid": "2a164f91-5735-4fed-acbf-29ddf4ba25da",
-      "width": 0,
-      "x": 576,
-      "y": 96,
-      "zOrder": 2,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "name": "objects",
-      "persistentUuid": "7f9a80ee-ec99-4442-9155-aaf31503ecfd",
-      "width": 0,
-      "x": 672,
-      "y": 480,
-      "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -77,46 +47,9 @@
       "name": "playerAnim",
       "persistentUuid": "a7998354-f0bd-496f-857d-4ad26610a139",
       "width": 48,
-      "x": 272,
-      "y": 224,
+      "x": 1152,
+      "y": 64,
       "zOrder": 40,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "height": 32,
-      "layer": "",
-      "name": "NPC",
-      "persistentUuid": "aa4fa9e5-555b-44f5-92d2-0a27811089ec",
-      "width": 48,
-      "x": 384,
-      "y": 160,
-      "zOrder": 5,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "folded": true,
-          "name": "dialogue_id",
-          "type": "number",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "name": "NPCAnim",
-      "persistentUuid": "2e54144e-3678-415b-9129-6680a266e60a",
-      "width": 0,
-      "x": 384,
-      "y": 80,
-      "zOrder": 41,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -198,44 +131,14 @@
     },
     {
       "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "name": "enemy",
-      "persistentUuid": "f46ceea4-bb29-4821-bf7a-fc62b2f82906",
-      "width": 0,
-      "x": 768,
-      "y": 288,
-      "zOrder": 47,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "name": "enemy",
-      "persistentUuid": "aa335af6-7699-4551-9f3c-dc059b7e7724",
-      "width": 0,
-      "x": -160,
-      "y": 416,
-      "zOrder": 47,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
       "customSize": true,
       "height": 32,
       "layer": "",
       "name": "item",
       "persistentUuid": "0a66aad6-69ba-449e-b042-2c8487d8b490",
       "width": 32,
-      "x": 448,
-      "y": 288,
+      "x": -64,
+      "y": 512,
       "zOrder": 48,
       "numberProperties": [],
       "stringProperties": [],
@@ -287,41 +190,13 @@
     {
       "angle": 0,
       "customSize": true,
-      "height": 32,
-      "layer": "",
-      "name": "item",
-      "persistentUuid": "86cdc88d-73a1-482d-9e3f-b3ad9b4862a6",
-      "width": 32,
-      "x": 320,
-      "y": 480,
-      "zOrder": 51,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "folded": true,
-          "name": "itemType",
-          "type": "number",
-          "value": 2
-        },
-        {
-          "folded": true,
-          "name": "dropped",
-          "type": "number",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": true,
       "height": 160,
       "layer": "",
       "name": "slash",
       "persistentUuid": "49ec5942-72a4-4477-b073-30f238dc4fb9",
       "width": 64,
-      "x": 352,
-      "y": 224,
+      "x": -64,
+      "y": -64,
       "zOrder": 52,
       "numberProperties": [],
       "stringProperties": [],
@@ -347,58 +222,6 @@
       "customSize": false,
       "height": 0,
       "layer": "",
-      "name": "enemy",
-      "persistentUuid": "432f16f7-3559-4213-aefb-577902785dce",
-      "width": 0,
-      "x": 608,
-      "y": 192,
-      "zOrder": 56,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "name": "enemy",
-      "persistentUuid": "e5c2ebb6-9174-4159-b6c8-3b9e750cf6cc",
-      "width": 0,
-      "x": 704,
-      "y": 96,
-      "zOrder": 58,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "height": 128,
-      "layer": "",
-      "name": "hazard",
-      "persistentUuid": "2a32aac8-cfee-44c2-9098-a07f68979f52",
-      "width": 160,
-      "x": 0,
-      "y": 416,
-      "zOrder": 59,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "folded": true,
-          "name": "hazardType",
-          "type": "number",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
       "name": "damageEffects",
       "persistentUuid": "63224a3d-c6d7-4d91-b544-15ef5282138f",
       "width": 0,
@@ -412,28 +235,181 @@
     {
       "angle": 0,
       "customSize": true,
-      "height": 32,
+      "height": 128,
       "layer": "",
-      "name": "item",
-      "persistentUuid": "aa947b63-c4f0-4386-b197-7ae6c6dc2e8e",
-      "width": 32,
-      "x": 508.5714416503906,
-      "y": 464.28570556640625,
-      "zOrder": 51,
+      "name": "objects",
+      "persistentUuid": "030f8c47-065b-47e0-b955-d12ee972354d",
+      "width": 64,
+      "x": 1376,
+      "y": 0,
+      "zOrder": 39,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 64,
+      "layer": "",
+      "name": "objects",
+      "persistentUuid": "850235fa-d887-483a-881a-dff1de195f7b",
+      "width": 64,
+      "x": 1301,
+      "y": 11,
+      "zOrder": 39,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 2
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 96,
+      "layer": "",
+      "name": "accesoryObjects",
+      "persistentUuid": "4f8ec822-2e84-4c97-b2dc-8cd7cff2079f",
+      "width": 64,
+      "x": 1273,
+      "y": -64,
+      "zOrder": 38,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "map",
+      "persistentUuid": "8d3e7ead-2f4d-464f-81ac-731af5cbd266",
+      "width": 0,
+      "x": 1132,
+      "y": -78,
+      "zOrder": 0,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": [
         {
           "folded": true,
-          "name": "itemType",
+          "name": "id",
+          "type": "number",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "map",
+      "persistentUuid": "562c0203-9fdc-443c-9e72-66859e7c55a4",
+      "width": 0,
+      "x": 1120,
+      "y": 512,
+      "zOrder": 0,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "teleportation",
+      "persistentUuid": "6158935c-237e-4bfc-abef-56f960340edc",
+      "width": 0,
+      "x": 1163,
+      "y": 241,
+      "zOrder": 62,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "teleportation",
+      "persistentUuid": "64dfc21f-7628-486f-a69b-13a5641e9b1a",
+      "width": 0,
+      "x": 1120,
+      "y": 608,
+      "zOrder": 62,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "NPC",
+      "persistentUuid": "075394c2-92f5-4945-89f7-70f9d8dc8196",
+      "width": 32,
+      "x": 1344,
+      "y": 608,
+      "zOrder": 63,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "dialogue_id",
           "type": "number",
           "value": 2
         },
         {
           "folded": true,
-          "name": "dropped",
+          "name": "NPC_id",
           "type": "number",
-          "value": 1
+          "value": 0
         }
       ]
     },
@@ -442,30 +418,27 @@
       "customSize": true,
       "height": 96,
       "layer": "",
-      "name": "hidingObject",
-      "persistentUuid": "62a232db-2fc6-4619-828f-e9ce63458e9c",
-      "width": 128,
-      "x": 32,
-      "y": 32,
-      "zOrder": 61,
-      "numberProperties": [],
+      "name": "NPCAnim",
+      "persistentUuid": "6142d14f-fd2b-4450-873c-017386d4821d",
+      "width": 64,
+      "x": 1376,
+      "y": 544,
+      "zOrder": 64,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
       "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "height": 96,
-      "layer": "",
-      "name": "hidingObject",
-      "persistentUuid": "2eecbd7b-dd12-4fae-b923-a59cb624532d",
-      "width": 128,
-      "x": 192,
-      "y": 32,
-      "zOrder": 61,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "NPC_id",
+          "type": "number",
+          "value": 0
+        }
+      ]
     }
   ],
   "objects": [
@@ -490,6 +463,64 @@
                 {
                   "hasCustomCollisionMask": false,
                   "image": "NewSprite-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "bed-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "nightstand",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "nightstand-1.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -544,6 +575,35 @@
                 {
                   "hasCustomCollisionMask": false,
                   "image": "playerAnim-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "refrigerator",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "refrigerator-1.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -2484,6 +2544,13 @@
         "includeConfig": 0
       },
       "target": "Hiding-mechanics"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "teleportation-system"
     }
   ],
   "layers": [

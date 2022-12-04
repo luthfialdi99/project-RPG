@@ -80,6 +80,14 @@
         },
         {
           "type": {
+            "value": "Cache"
+          },
+          "parameters": [
+            "debugText"
+          ]
+        },
+        {
+          "type": {
             "value": "BBText::SetBBText"
           },
           "parameters": [

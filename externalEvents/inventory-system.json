@@ -4993,6 +4993,41 @@
                           ]
                         }
                       ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "invBox",
+                            "invBox_Equipped",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ModVarGlobal"
+                              },
+                              "parameters": [
+                                "player_attackEnabled",
+                                "=",
+                                "0"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 },

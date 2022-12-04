@@ -512,7 +512,19 @@
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "enemy",
+                    "inPursuit",
+                    "<=",
+                    "2"
+                  ]
+                }
+              ],
               "actions": [
                 {
                   "type": {
@@ -766,6 +778,11 @@
               ]
             },
             {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
+            },
+            {
               "type": "BuiltinCommonInstructions::Comment",
               "color": {
                 "b": 109,
@@ -790,6 +807,17 @@
                     "enemy",
                     "350",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "hidingObjectIcon",
+                    "id",
+                    "=",
+                    "0"
                   ]
                 }
               ],
@@ -831,58 +859,6 @@
                         "inPursuit",
                         "=",
                         "1"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "CenterX"
-                      },
-                      "parameters": [
-                        "enemy",
-                        ">",
-                        "player.CenterX()"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "FlipX"
-                      },
-                      "parameters": [
-                        "enemy",
-                        ""
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "CenterX"
-                      },
-                      "parameters": [
-                        "enemy",
-                        "<",
-                        "player.CenterX()"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "FlipX"
-                      },
-                      "parameters": [
-                        "enemy",
-                        "yes"
                       ]
                     }
                   ]
@@ -1083,6 +1059,17 @@
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "hidingObjectIcon",
+                        "id",
+                        "=",
+                        "0"
+                      ]
+                    },
                     {
                       "type": {
                         "value": "VarObjet"
@@ -1333,121 +1320,127 @@
                   ]
                 }
               ]
-            },
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::ForEach",
+      "object": "enemy",
+      "conditions": [],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
             {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "Distance"
-                  },
-                  "parameters": [
-                    "playerAnim",
-                    "enemy",
-                    "350",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "ModVarObjet"
-                  },
-                  "parameters": [
-                    "enemy",
-                    "inPursuit",
-                    "=",
-                    "0"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "CenterX"
-                      },
-                      "parameters": [
-                        "enemy",
-                        ">",
-                        "enemy.Pathfinding::NextNodeX()"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "FlipX"
-                      },
-                      "parameters": [
-                        "enemy",
-                        "yes"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "CenterX"
-                      },
-                      "parameters": [
-                        "enemy",
-                        "<",
-                        "enemy.Pathfinding::NextNodeX()"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "FlipX"
-                      },
-                      "parameters": [
-                        "enemy",
-                        ""
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "VarObjet"
-                  },
-                  "parameters": [
-                    "enemy",
-                    "inPursuit",
-                    "=",
-                    "0"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PathfindingBehavior::SetDestination"
-                  },
-                  "parameters": [
-                    "enemy",
-                    "Pathfinding",
-                    "",
-                    "enemy.Variable(posXInit)",
-                    "enemy.Variable(posYInit)"
-                  ]
-                }
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "enemy",
+                "inPursuit",
+                "=",
+                "0"
               ]
             }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PathfindingBehavior::SetDestination"
+              },
+              "parameters": [
+                "enemy",
+                "Pathfinding",
+                "",
+                "enemy.Variable(posXInit)",
+                "enemy.Variable(posYInit)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CenterX"
+              },
+              "parameters": [
+                "enemy",
+                "<",
+                "enemy.Pathfinding::NextNodeX()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FlipX"
+              },
+              "parameters": [
+                "enemy",
+                "yes"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CenterX"
+              },
+              "parameters": [
+                "enemy",
+                ">",
+                "enemy.Pathfinding::NextNodeX()"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FlipX"
+              },
+              "parameters": [
+                "enemy",
+                "no"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": true,
+            "value": "Distance"
+          },
+          "parameters": [
+            "playerAnim",
+            "enemy",
+            "350",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarObjet"
+          },
+          "parameters": [
+            "enemy",
+            "inPursuit",
+            "=",
+            "0"
           ]
         }
       ]
