@@ -47,6 +47,25 @@
             "=",
             "dialogue.ZOrder()+1"
           ]
+        },
+        {
+          "type": {
+            "value": "BBText::SetWrappingWidth"
+          },
+          "parameters": [
+            "dialogue",
+            "=",
+            "9999"
+          ]
+        },
+        {
+          "type": {
+            "value": "ResetObjectTimer"
+          },
+          "parameters": [
+            "dialogue",
+            "\"atCD\""
+          ]
         }
       ]
     },
@@ -71,7 +90,81 @@
           "parameters": [
             "dialogueBoxes_lr"
           ]
-        },
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": true,
+            "value": "AutoTyping::BBText_AutoTyping::TypingFinished"
+          },
+          "parameters": [
+            "dialogue",
+            "BBText_AutoTyping",
+            ""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "e"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareObjectTimer"
+              },
+              "parameters": [
+                "dialogue",
+                "\"atCD\"",
+                ">",
+                "0.1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AutoTyping::BBText_AutoTyping::ChangeInterval"
+              },
+              "parameters": [
+                "dialogue",
+                "BBText_AutoTyping",
+                "0.01",
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "AutoTyping::BBText_AutoTyping::TypingFinished"
+          },
+          "parameters": [
+            "dialogue",
+            "BBText_AutoTyping",
+            ""
+          ]
+        }
+      ],
+      "actions": [
         {
           "type": {
             "value": "AutoTyping::BBText_AutoTyping::ChangeInterval"
@@ -79,8 +172,17 @@
           "parameters": [
             "dialogue",
             "BBText_AutoTyping",
-            "0.05",
+            "0.04",
             ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ResetObjectTimer"
+          },
+          "parameters": [
+            "dialogue",
+            "\"atCD\""
           ]
         }
       ]
@@ -144,22 +246,22 @@
             },
             {
               "type": {
-                "value": "ChangeWidth"
-              },
-              "parameters": [
-                "dialogueBoxes_lr",
-                "=",
-                "dialogue.Width()+20"
-              ]
-            },
-            {
-              "type": {
                 "value": "ChangeHeight"
               },
               "parameters": [
                 "dialogueBoxes_lr",
                 "=",
                 "dialogue.Height()+20"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeWidth"
+              },
+              "parameters": [
+                "dialogueBoxes_lr",
+                "=",
+                "dialogue.Width()+20"
               ]
             }
           ]
@@ -265,6 +367,19 @@
       "actions": [],
       "events": [
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "dialogues init",
+          "comment2": ""
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -285,7 +400,7 @@
               "parameters": [
                 "NPC",
                 "player",
-                "50",
+                "100",
                 ""
               ]
             }
@@ -342,6 +457,15 @@
                       "actions": [
                         {
                           "type": {
+                            "value": "ResetObjectTimer"
+                          },
+                          "parameters": [
+                            "dialogue",
+                            "\"atCD\""
+                          ]
+                        },
+                        {
+                          "type": {
                             "value": "ModVarObjet"
                           },
                           "parameters": [
@@ -369,6 +493,19 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "test dialogue",
+          "comment2": ""
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -426,17 +563,6 @@
                     ">=",
                     "1"
                   ]
-                },
-                {
-                  "type": {
-                    "value": "CompareObjectTimer"
-                  },
-                  "parameters": [
-                    "dialogue",
-                    "\"dt\"",
-                    ">",
-                    "0.5"
-                  ]
                 }
               ],
               "actions": [],
@@ -446,24 +572,43 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "KeyReleased"
+                        "value": "CompareObjectTimer"
                       },
                       "parameters": [
-                        "",
-                        "e"
+                        "dialogue",
+                        "\"dt\"",
+                        ">",
+                        "0.5"
                       ]
                     }
                   ],
-                  "actions": [
+                  "actions": [],
+                  "events": [
                     {
-                      "type": {
-                        "value": "ModVarObjet"
-                      },
-                      "parameters": [
-                        "NPC",
-                        "dialogue_active",
-                        "+",
-                        "1"
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "KeyReleased"
+                          },
+                          "parameters": [
+                            "",
+                            "e"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "ModVarObjet"
+                          },
+                          "parameters": [
+                            "NPC",
+                            "dialogue_active",
+                            "+",
+                            "1"
+                          ]
+                        }
                       ]
                     }
                   ]
@@ -625,6 +770,19 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Refrigerator dialogue",
+          "comment2": ""
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -747,7 +905,7 @@
                   "parameters": [
                     "dialogue",
                     "=",
-                    "\"hmm...\""
+                    "\"It's empty.\""
                   ]
                 }
               ]
@@ -775,7 +933,218 @@
                   "parameters": [
                     "dialogue",
                     "=",
-                    "\"Need to make dinner soon.\""
+                    "\"I need to buy something from the supermarket.\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "4"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "dialogue_id",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "dialogue sate",
+          "comment2": ""
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "NPC",
+                "dialogue_id",
+                "=",
+                "3"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "AutoTyping::BBText_AutoTyping::IsCharacterJustAdded"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "BBText_AutoTyping",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetObjectTimer"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "\"dt\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    ">=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CompareObjectTimer"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "\"dt\"",
+                    ">",
+                    "0.5"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "e"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "NPC",
+                        "dialogue_active",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "=",
+                    "\"Lo-hello! Want to buy some Chicken Satay?\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "=",
+                    "\"No?\""
                   ]
                 }
               ]
@@ -803,7 +1172,7 @@
                   "parameters": [
                     "dialogue",
                     "=",
-                    "\"I should go to the supermarket.\""
+                    "\"Okay, then. Good day!\""
                   ]
                 }
               ]

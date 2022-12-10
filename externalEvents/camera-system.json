@@ -14,14 +14,6 @@
           "parameters": [
             "camera"
           ]
-        },
-        {
-          "type": {
-            "value": "Cache"
-          },
-          "parameters": [
-            "map"
-          ]
         }
       ]
     },
@@ -75,17 +67,7 @@
           ]
         }
       ],
-      "actions": [
-        {
-          "type": {
-            "value": "Montre"
-          },
-          "parameters": [
-            "map",
-            ""
-          ]
-        }
-      ],
+      "actions": [],
       "events": [
         {
           "type": "BuiltinCommonInstructions::Comment",
@@ -125,7 +107,7 @@
                 "Tween",
                 "\"camera-mapFocus\"",
                 "map.X()+130",
-                "map.Y()+200",
+                "map.Y()+250",
                 "\"linear\"",
                 "0.001",
                 ""
@@ -172,6 +154,52 @@
                 "\"camera-mapFocus\"",
                 "map.X()+130",
                 "map.Y()+200",
+                "\"linear\"",
+                "0.001",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "lorong apartment",
+          "comment2": ""
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "map",
+                "id",
+                "=",
+                "3"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::AddObjectPositionTween"
+              },
+              "parameters": [
+                "camera",
+                "Tween",
+                "\"camera-mapFocus\"",
+                "map.X()+130",
+                "map.Y()+250",
                 "\"linear\"",
                 "0.001",
                 ""

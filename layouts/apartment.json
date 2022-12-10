@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.6507999938964841,
+    "zoomFactor": 0.6147999938964838,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -32,8 +32,8 @@
       "name": "player",
       "persistentUuid": "5011d56a-6a35-49ef-ae36-8f4b7009cd7e",
       "width": 48,
-      "x": 1136,
-      "y": 160,
+      "x": 1200,
+      "y": -128,
       "zOrder": 1,
       "numberProperties": [],
       "stringProperties": [],
@@ -47,8 +47,8 @@
       "name": "playerAnim",
       "persistentUuid": "a7998354-f0bd-496f-857d-4ad26610a139",
       "width": 48,
-      "x": 1152,
-      "y": 64,
+      "x": 1248,
+      "y": -288,
       "zOrder": 40,
       "numberProperties": [],
       "stringProperties": [],
@@ -235,53 +235,13 @@
     {
       "angle": 0,
       "customSize": true,
-      "height": 128,
-      "layer": "",
-      "name": "objects",
-      "persistentUuid": "030f8c47-065b-47e0-b955-d12ee972354d",
-      "width": 64,
-      "x": 1376,
-      "y": 0,
-      "zOrder": 39,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 1
-        }
-      ],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "height": 64,
-      "layer": "",
-      "name": "objects",
-      "persistentUuid": "850235fa-d887-483a-881a-dff1de195f7b",
-      "width": 64,
-      "x": 1301,
-      "y": 11,
-      "zOrder": 39,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 2
-        }
-      ],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
       "height": 96,
       "layer": "",
       "name": "accesoryObjects",
       "persistentUuid": "4f8ec822-2e84-4c97-b2dc-8cd7cff2079f",
       "width": 64,
-      "x": 1273,
-      "y": -64,
+      "x": 1216,
+      "y": -430,
       "zOrder": 38,
       "numberProperties": [],
       "stringProperties": [],
@@ -295,10 +255,15 @@
       "name": "map",
       "persistentUuid": "8d3e7ead-2f4d-464f-81ac-731af5cbd266",
       "width": 0,
-      "x": 1132,
-      "y": -78,
+      "x": 1120,
+      "y": -448,
       "zOrder": 0,
-      "numberProperties": [],
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 2
+        }
+      ],
       "stringProperties": [],
       "initialVariables": [
         {
@@ -338,14 +303,14 @@
     },
     {
       "angle": 0,
-      "customSize": false,
-      "height": 0,
+      "customSize": true,
+      "height": 64,
       "layer": "",
       "name": "teleportation",
       "persistentUuid": "6158935c-237e-4bfc-abef-56f960340edc",
-      "width": 0,
-      "x": 1163,
-      "y": 241,
+      "width": 128,
+      "x": 1216,
+      "y": 32,
       "zOrder": 62,
       "numberProperties": [],
       "stringProperties": [],
@@ -366,7 +331,7 @@
       "name": "teleportation",
       "persistentUuid": "64dfc21f-7628-486f-a69b-13a5641e9b1a",
       "width": 0,
-      "x": 1120,
+      "x": 2193,
       "y": 608,
       "zOrder": 62,
       "numberProperties": [
@@ -393,7 +358,7 @@
       "name": "NPC",
       "persistentUuid": "075394c2-92f5-4945-89f7-70f9d8dc8196",
       "width": 32,
-      "x": 1344,
+      "x": 1152,
       "y": 608,
       "zOrder": 63,
       "numberProperties": [],
@@ -421,7 +386,7 @@
       "name": "NPCAnim",
       "persistentUuid": "6142d14f-fd2b-4450-873c-017386d4821d",
       "width": 64,
-      "x": 1376,
+      "x": 1152,
       "y": 544,
       "zOrder": 64,
       "numberProperties": [
@@ -439,108 +404,260 @@
           "value": 0
         }
       ]
-    }
-  ],
-  "objects": [
+    },
     {
-      "assetStoreId": "",
-      "name": "objects",
-      "tags": "",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "animations": [
+      "angle": 0,
+      "customSize": true,
+      "height": 96,
+      "layer": "",
+      "name": "accesoryObjects",
+      "persistentUuid": "5391ad98-8921-4541-8c53-3e36fcdcfab6",
+      "width": 64,
+      "x": 1280,
+      "y": -430,
+      "zOrder": 38,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "map",
+      "persistentUuid": "11718598-5351-4057-b62f-a073be49ca13",
+      "width": 0,
+      "x": 2048,
+      "y": 512,
+      "zOrder": 0,
+      "numberProperties": [
         {
-          "name": "NewSprite",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.07999999821186066,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "NewSprite-1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
-        },
+          "name": "animation",
+          "value": 3
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
         {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "bed-1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "nightstand",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.07999999821186066,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "nightstand-1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 3
         }
       ]
     },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 96,
+      "layer": "",
+      "name": "accesoryObjects",
+      "persistentUuid": "1bc0ffb1-320b-4473-ad68-8ed5e6244c36",
+      "width": 64,
+      "x": 2194,
+      "y": 512,
+      "zOrder": 38,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 128,
+      "layer": "",
+      "name": "accesoryObjects",
+      "persistentUuid": "36ede921-ba49-441c-9bcf-cb6b3ae0fa3d",
+      "width": 10,
+      "x": 2144,
+      "y": 640,
+      "zOrder": 65,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 2
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 64,
+      "layer": "",
+      "name": "teleportation",
+      "persistentUuid": "ce72ecf0-bc4e-4812-a174-32847aa22465",
+      "width": 64,
+      "x": 2112,
+      "y": 928,
+      "zOrder": 62,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 64,
+      "layer": "",
+      "name": "teleportation",
+      "persistentUuid": "3e821d76-f907-4a8d-b196-eacf0eeff0cc",
+      "width": 64,
+      "x": 1376,
+      "y": 608,
+      "zOrder": 62,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "objects",
+      "persistentUuid": "95b126e8-7c50-4853-a375-4bb93c838c69",
+      "width": 0,
+      "x": 1129,
+      "y": -369,
+      "zOrder": 39,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 1
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "objects",
+      "persistentUuid": "ed9d415b-1e0f-4a31-841d-75c90be1da45",
+      "width": 0,
+      "x": 1198,
+      "y": -355,
+      "zOrder": 39,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 2
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "objects",
+      "persistentUuid": "78350ec9-0e02-4c6e-8fa4-8d404e423e43",
+      "width": 0,
+      "x": 1376,
+      "y": -320,
+      "zOrder": 39,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 3
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "objects",
+      "persistentUuid": "8a7ada94-9491-4ae6-ad86-795a1273813b",
+      "width": 0,
+      "x": 1389,
+      "y": -160,
+      "zOrder": 39,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 4
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "objects",
+      "persistentUuid": "411e38b5-c838-4f84-9094-6f9d63c461c3",
+      "width": 0,
+      "x": 1120,
+      "y": -192,
+      "zOrder": 38,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 5
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "objects",
+      "persistentUuid": "ff43d9e5-44d0-41c8-ae8f-1148217e3eca",
+      "width": 0,
+      "x": 1335,
+      "y": -298,
+      "zOrder": 38,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 6
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
+  "objects": [
     {
       "assetStoreId": "",
       "name": "NPCAnim",
@@ -657,105 +774,6 @@
         "align": "left",
         "wordWrap": true
       }
-    },
-    {
-      "assetStoreId": "",
-      "name": "dialogueBoxes_lr",
-      "tags": "",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "animations": [
-        {
-          "name": "left",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.07999999821186066,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "NewSprite-1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "right",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "NewSprite-1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "mid",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "NewSprite-1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
-        }
-      ]
     },
     {
       "assetStoreId": "",

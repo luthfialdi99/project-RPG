@@ -355,6 +355,27 @@
             "0",
             "\"UI\""
           ]
+        },
+        {
+          "type": {
+            "value": "Cache"
+          },
+          "parameters": [
+            "InvDropDownActionText"
+          ]
+        },
+        {
+          "type": {
+            "value": "PrimitiveDrawing::RoundedRectangle"
+          },
+          "parameters": [
+            "invDropDownActionShape",
+            "0",
+            "0",
+            "0",
+            "0",
+            "5"
+          ]
         }
       ]
     },
