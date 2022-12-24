@@ -35,125 +35,78 @@
       "comment2": ""
     },
     {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "BuiltinCommonInstructions::Or"
-          },
-          "parameters": [],
-          "subInstructions": [
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "w"
-              ]
-            },
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "Up"
-              ]
-            }
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "TopDownMovementBehavior::SimulateUpKey"
-          },
-          "parameters": [
-            "player",
-            "TopDownMovement"
-          ]
-        },
-        {
-          "type": {
-            "value": "ChangeAnimation"
-          },
-          "parameters": [
-            "playerAnim",
-            "=",
-            "1"
-          ]
-        },
-        {
-          "type": {
-            "value": "FlipX"
-          },
-          "parameters": [
-            "playerAnim",
-            "no"
-          ]
-        }
-      ]
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": "Don't move when dialogue occured",
+      "comment2": ""
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
           "type": {
-            "value": "BuiltinCommonInstructions::Or"
-          },
-          "parameters": [],
-          "subInstructions": [
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "a"
-              ]
-            },
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ]
-            }
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "TopDownMovementBehavior::SimulateLeftKey"
+            "value": "VarObjet"
           },
           "parameters": [
-            "player",
-            "TopDownMovement"
-          ]
-        },
-        {
-          "type": {
-            "value": "ChangeAnimation"
-          },
-          "parameters": [
-            "playerAnim",
+            "dialogue",
+            "dialogue_id",
             "=",
             "0"
           ]
         }
       ],
+      "actions": [],
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
-                "inverted": true,
-                "value": "Animation"
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "w"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Up"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TopDownMovementBehavior::SimulateUpKey"
+              },
+              "parameters": [
+                "player",
+                "TopDownMovement"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeAnimation"
               },
               "parameters": [
                 "playerAnim",
@@ -161,172 +114,6 @@
                 "1"
               ]
             },
-            {
-              "type": {
-                "inverted": true,
-                "value": "Animation"
-              },
-              "parameters": [
-                "playerAnim",
-                "=",
-                "2"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "FlipX"
-              },
-              "parameters": [
-                "playerAnim",
-                "yes"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "BuiltinCommonInstructions::Or"
-          },
-          "parameters": [],
-          "subInstructions": [
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "s"
-              ]
-            },
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "Down"
-              ]
-            }
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "TopDownMovementBehavior::SimulateDownKey"
-          },
-          "parameters": [
-            "player",
-            "TopDownMovement"
-          ]
-        },
-        {
-          "type": {
-            "value": "ChangeAnimation"
-          },
-          "parameters": [
-            "playerAnim",
-            "=",
-            "2"
-          ]
-        },
-        {
-          "type": {
-            "value": "FlipX"
-          },
-          "parameters": [
-            "playerAnim",
-            "no"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "BuiltinCommonInstructions::Or"
-          },
-          "parameters": [],
-          "subInstructions": [
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "d"
-              ]
-            },
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "Right"
-              ]
-            }
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "TopDownMovementBehavior::SimulateRightKey"
-          },
-          "parameters": [
-            "player",
-            "TopDownMovement"
-          ]
-        },
-        {
-          "type": {
-            "value": "ChangeAnimation"
-          },
-          "parameters": [
-            "playerAnim",
-            "=",
-            "0"
-          ]
-        }
-      ],
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": true,
-                "value": "Animation"
-              },
-              "parameters": [
-                "playerAnim",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "inverted": true,
-                "value": "Animation"
-              },
-              "parameters": [
-                "playerAnim",
-                "=",
-                "2"
-              ]
-            }
-          ],
-          "actions": [
             {
               "type": {
                 "value": "FlipX"
@@ -337,21 +124,105 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
+        },
         {
-          "type": {
-            "value": "BuiltinCommonInstructions::Or"
-          },
-          "parameters": [],
-          "subInstructions": [
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
             {
               "type": {
-                "value": "BuiltinCommonInstructions::And"
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "a"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TopDownMovementBehavior::SimulateLeftKey"
+              },
+              "parameters": [
+                "player",
+                "TopDownMovement"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeAnimation"
+              },
+              "parameters": [
+                "playerAnim",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Animation"
+                  },
+                  "parameters": [
+                    "playerAnim",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Animation"
+                  },
+                  "parameters": [
+                    "playerAnim",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlipX"
+                  },
+                  "parameters": [
+                    "playerAnim",
+                    "yes"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
               },
               "parameters": [],
               "subInstructions": [
@@ -370,14 +241,49 @@
                   },
                   "parameters": [
                     "",
-                    "a"
+                    "Down"
                   ]
                 }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TopDownMovementBehavior::SimulateDownKey"
+              },
+              "parameters": [
+                "player",
+                "TopDownMovement"
               ]
             },
             {
               "type": {
-                "value": "BuiltinCommonInstructions::And"
+                "value": "ChangeAnimation"
+              },
+              "parameters": [
+                "playerAnim",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "FlipX"
+              },
+              "parameters": [
+                "playerAnim",
+                "no"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
               },
               "parameters": [],
               "subInstructions": [
@@ -387,7 +293,7 @@
                   },
                   "parameters": [
                     "",
-                    "Down"
+                    "d"
                   ]
                 },
                 {
@@ -396,32 +302,158 @@
                   },
                   "parameters": [
                     "",
-                    "Left"
+                    "Right"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TopDownMovementBehavior::SimulateRightKey"
+              },
+              "parameters": [
+                "player",
+                "TopDownMovement"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeAnimation"
+              },
+              "parameters": [
+                "playerAnim",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Animation"
+                  },
+                  "parameters": [
+                    "playerAnim",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Animation"
+                  },
+                  "parameters": [
+                    "playerAnim",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlipX"
+                  },
+                  "parameters": [
+                    "playerAnim",
+                    "no"
                   ]
                 }
               ]
             }
           ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "ChangeAnimation"
-          },
-          "parameters": [
-            "playerAnim",
-            "=",
-            "0"
-          ]
         },
         {
-          "type": {
-            "value": "FlipX"
-          },
-          "parameters": [
-            "playerAnim",
-            "yes"
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "s"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "a"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Down"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ChangeAnimation"
+              },
+              "parameters": [
+                "playerAnim",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "FlipX"
+              },
+              "parameters": [
+                "playerAnim",
+                "yes"
+              ]
+            }
           ]
         }
       ]

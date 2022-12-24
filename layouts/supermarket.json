@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.6507999938964841,
+    "zoomFactor": 0.4508000061035154,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -32,9 +32,9 @@
       "name": "player",
       "persistentUuid": "5011d56a-6a35-49ef-ae36-8f4b7009cd7e",
       "width": 48,
-      "x": 480,
-      "y": 64,
-      "zOrder": 1,
+      "x": 3456,
+      "y": 928,
+      "zOrder": 10,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -47,8 +47,8 @@
       "name": "playerAnim",
       "persistentUuid": "a7998354-f0bd-496f-857d-4ad26610a139",
       "width": 48,
-      "x": 944,
-      "y": 128,
+      "x": 816,
+      "y": 32,
       "zOrder": 40,
       "numberProperties": [],
       "stringProperties": [],
@@ -250,7 +250,14 @@
         }
       ],
       "stringProperties": [],
-      "initialVariables": []
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 4
+        }
+      ]
     },
     {
       "angle": 0,
@@ -260,8 +267,8 @@
       "name": "objects",
       "persistentUuid": "a22daba4-a8c6-481e-bb57-158f54afa2cf",
       "width": 160,
-      "x": 960,
-      "y": 64,
+      "x": 1408,
+      "y": -192,
       "zOrder": 1,
       "numberProperties": [
         {
@@ -287,8 +294,8 @@
       "name": "objects",
       "persistentUuid": "9d7b1109-85f5-40a9-8aac-4bdc2209f851",
       "width": 0,
-      "x": 1120,
-      "y": 128,
+      "x": 1568,
+      "y": -128,
       "zOrder": 2,
       "numberProperties": [
         {
@@ -314,8 +321,8 @@
       "name": "NPC",
       "persistentUuid": "19db08c5-510f-48a0-b5c5-d79cdab3cd1f",
       "width": 69,
-      "x": 1120,
-      "y": 120,
+      "x": 1568,
+      "y": -124,
       "zOrder": 1,
       "numberProperties": [],
       "stringProperties": [],
@@ -342,8 +349,8 @@
       "name": "NPCAnim",
       "persistentUuid": "4009b433-f579-41bb-9c09-c470ef6d8ab3",
       "width": 0,
-      "x": 1136,
-      "y": 58,
+      "x": 1584,
+      "y": -192,
       "zOrder": 1,
       "numberProperties": [
         {
@@ -356,6 +363,187 @@
         {
           "folded": true,
           "name": "NPC_id",
+          "type": "number",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "map",
+      "persistentUuid": "63fa24ff-71a8-4fa5-a588-ca041b843237",
+      "width": 0,
+      "x": 2880,
+      "y": -96,
+      "zOrder": 0,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 6
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 128,
+      "layer": "",
+      "name": "objects",
+      "persistentUuid": "75330f1e-411a-45e7-b177-3de62e7b9975",
+      "width": 128,
+      "x": 3520,
+      "y": 672,
+      "zOrder": 61,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 9
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "NPC",
+      "persistentUuid": "352ce7c3-4f59-45eb-8f00-fd8171bead40",
+      "width": 32,
+      "x": 3552,
+      "y": 736,
+      "zOrder": 62,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "dialogue_id",
+          "type": "number",
+          "value": 4
+        },
+        {
+          "folded": true,
+          "name": "NPC_id",
+          "type": "number",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "NPCAnim",
+      "persistentUuid": "dd4e86a2-57a0-47a4-8f01-2592608bc5a5",
+      "width": 0,
+      "x": 3536,
+      "y": 672,
+      "zOrder": 63,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "NPC_id",
+          "type": "number",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "NPC",
+      "persistentUuid": "8a14b7fd-571b-49b4-bb88-88c7b3a9f36d",
+      "width": 32,
+      "x": 3616,
+      "y": 800,
+      "zOrder": 64,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "dialogue_id",
+          "type": "number",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "NPCAnim",
+      "persistentUuid": "17975db4-373d-4260-976f-0f174e6409ff",
+      "width": 0,
+      "x": 3616,
+      "y": 736,
+      "zOrder": 65,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "NPC_id",
+          "type": "number",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "item",
+      "persistentUuid": "9971b77d-c00c-455a-86d1-eb3769054422",
+      "width": 32,
+      "x": 3904,
+      "y": 352,
+      "zOrder": 66,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 2
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "dropped",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "folded": true,
+          "name": "itemType",
           "type": "number",
           "value": 3
         }
@@ -1130,6 +1318,35 @@
                 {
                   "hasCustomCollisionMask": false,
                   "image": "item2-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "chicken",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "chicken-1.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",

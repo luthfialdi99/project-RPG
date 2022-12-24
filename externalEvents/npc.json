@@ -219,28 +219,7 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "NPC Z ORDER",
-          "comment2": ""
-        },
-        {
-          "type": "BuiltinCommonInstructions::ForEach",
-          "object": "objects",
-          "conditions": [],
-          "actions": [],
-          "events": [
+            },
             {
               "type": "BuiltinCommonInstructions::Comment",
               "color": {
@@ -251,26 +230,28 @@
                 "textG": 0,
                 "textR": 0
               },
-              "comment": "abang tukang sate+tungku",
+              "comment": "NPC Z ORDER",
               "comment2": ""
             },
             {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "VarObjet"
-                  },
-                  "parameters": [
-                    "objects",
-                    "id",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "objects",
+              "conditions": [],
               "actions": [],
               "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "abang tukang sate+tungku",
+                  "comment2": ""
+                },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
@@ -279,22 +260,129 @@
                         "value": "VarObjet"
                       },
                       "parameters": [
-                        "NPCAnim",
-                        "NPC_id",
+                        "objects",
+                        "id",
                         "=",
-                        "3"
+                        "1"
                       ]
                     }
                   ],
-                  "actions": [
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "NPCAnim",
+                            "NPC_id",
+                            "=",
+                            "3"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "ChangePlan"
+                          },
+                          "parameters": [
+                            "NPCAnim",
+                            "=",
+                            "objects.ZOrder()-1"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "kasir supermarket",
+                  "comment2": ""
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
                     {
                       "type": {
-                        "value": "ChangePlan"
+                        "value": "VarObjet"
                       },
                       "parameters": [
-                        "NPCAnim",
+                        "objects",
+                        "id",
                         "=",
-                        "objects.ZOrder()-1"
+                        "2"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "NPCAnim",
+                            "NPC_id",
+                            "=",
+                            "4"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "ChangePlan"
+                          },
+                          "parameters": [
+                            "NPCAnim",
+                            "=",
+                            "objects.ZOrder()-1"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "NPCAnim",
+                            "NPC_id",
+                            "=",
+                            "-1"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "ChangePlan"
+                          },
+                          "parameters": [
+                            "NPCAnim",
+                            "=",
+                            "objects.ZOrder()+1"
+                          ]
+                        }
                       ]
                     }
                   ]

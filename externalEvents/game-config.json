@@ -93,7 +93,55 @@
           "parameters": [
             "debugText",
             "=",
-            "\"[b][color=yellow][outline=black]\"+ToString(round(1/TimeDelta()))+\"\neffectStack: \"+damageEffects.VariableString(effectStack)+\"\n(global)invItemCount: \"+GlobalVariableString(invItemCount)+\"\n(global)player_AttackEnabled: \"+GlobalVariableString(player_attackEnabled)+\"[/b][/color][/outline]\""
+            "\"[b][color=yellow][outline=black]\"+ToString(round(1/TimeDelta()))+\"\neffectStack: \"+damageEffects.VariableString(effectStack)+\"\n(global)invItemCount: \"+GlobalVariableString(invItemCount)+\"\n(global)player_AttackEnabled: \"+GlobalVariableString(player_attackEnabled)+\"\n\ndialogue_id: \"+dialogue.VariableString(dialogue_id)+\"[/b][/color][/outline]\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "PickNearest"
+          },
+          "parameters": [
+            "NPC",
+            "player.CenterX()",
+            "player.CenterY()",
+            ""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "NPC",
+          "conditions": [
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "NPC",
+                "player",
+                "100",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "debugText",
+                "=",
+                "\"[b][color=yellow][outline=black]\"+ToString(round(1/TimeDelta()))+\"\neffectStack: \"+damageEffects.VariableString(effectStack)+\"\n(global)invItemCount: \"+GlobalVariableString(invItemCount)+\"\n(global)player_AttackEnabled: \"+GlobalVariableString(player_attackEnabled)+\"\n\ndialogue_id: \"+dialogue.VariableString(dialogue_id)+\"\ndialogue_active(NPC): \"+NPC.VariableString(dialogue_active)+\"[/b][/color][/outline]\""
+              ]
+            }
           ]
         }
       ]

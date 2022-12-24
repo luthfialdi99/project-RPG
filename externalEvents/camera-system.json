@@ -32,7 +32,25 @@
             "",
             ""
           ]
-        },
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarObjet"
+          },
+          "parameters": [
+            "dialogue",
+            "dialogue_id",
+            "=",
+            "0"
+          ]
+        }
+      ],
+      "actions": [
         {
           "type": {
             "value": "Tween::AddObjectPositionTween"
@@ -43,6 +61,89 @@
             "\"camera\"",
             "slash.CenterX()-camera.Width()/2",
             "slash.CenterY()-camera.Height()/2",
+            "\"linear\"",
+            "300",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarObjet"
+          },
+          "parameters": [
+            "dialogue",
+            "dialogue_id",
+            ">",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "inverted": true,
+            "value": "Visible"
+          },
+          "parameters": [
+            "dialogueOptionsText"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Tween::AddObjectPositionTween"
+          },
+          "parameters": [
+            "camera",
+            "Tween",
+            "\"camera\"",
+            "dialogueArrow.CenterX()-camera.Width()/2",
+            "dialogueArrow.CenterY()-camera.Height()/2",
+            "\"linear\"",
+            "3000",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Visible"
+          },
+          "parameters": [
+            "dialogueOptionsText"
+          ]
+        },
+        {
+          "type": {
+            "value": "CompareObjectTimer"
+          },
+          "parameters": [
+            "dialogue",
+            "\"dt\"",
+            ">",
+            "0.7"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Tween::AddObjectPositionTween"
+          },
+          "parameters": [
+            "camera",
+            "Tween",
+            "\"camera\"",
+            "playerAnim.CenterX()-camera.Width()/2",
+            "playerAnim.CenterY()-camera.Height()/2",
             "\"linear\"",
             "300",
             ""
@@ -152,8 +253,8 @@
                 "camera",
                 "Tween",
                 "\"camera-mapFocus\"",
-                "map.X()+130",
-                "map.Y()+200",
+                "map.CenterX()",
+                "map.CenterY()-30",
                 "\"linear\"",
                 "0.001",
                 ""
