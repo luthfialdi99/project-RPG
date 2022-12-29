@@ -4242,6 +4242,14 @@
   ],
   "behaviorsSharedData": [
     {
+      "name": "Pathfinding",
+      "type": "PathfindingBehavior::PathfindingBehavior"
+    },
+    {
+      "name": "PathfindingObstacle",
+      "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+    },
+    {
       "name": "TopDownMovement",
       "type": "TopDownMovementBehavior::TopDownMovementBehavior"
     },

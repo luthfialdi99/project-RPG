@@ -33,7 +33,7 @@
       "persistentUuid": "5011d56a-6a35-49ef-ae36-8f4b7009cd7e",
       "width": 48,
       "x": 1200,
-      "y": -128,
+      "y": -256,
       "zOrder": 1,
       "numberProperties": [],
       "stringProperties": [],
@@ -47,8 +47,8 @@
       "name": "playerAnim",
       "persistentUuid": "a7998354-f0bd-496f-857d-4ad26610a139",
       "width": 48,
-      "x": 1248,
-      "y": -288,
+      "x": 1136,
+      "y": -320,
       "zOrder": 40,
       "numberProperties": [],
       "stringProperties": [],
@@ -62,24 +62,9 @@
       "name": "dialogue",
       "persistentUuid": "841d6984-4fc1-4eeb-992a-092791327a00",
       "width": 0,
-      "x": -76,
-      "y": 96,
+      "x": -64,
+      "y": 93,
       "zOrder": 42,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "height": 32,
-      "layer": "",
-      "name": "dialogueBoxes_lr",
-      "persistentUuid": "39998a5e-e403-49c1-93d6-81a5025d7458",
-      "width": 10,
-      "x": -42,
-      "y": 128,
-      "zOrder": 43,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -562,26 +547,6 @@
       "height": 0,
       "layer": "",
       "name": "objects",
-      "persistentUuid": "ed9d415b-1e0f-4a31-841d-75c90be1da45",
-      "width": 0,
-      "x": 1198,
-      "y": -355,
-      "zOrder": 39,
-      "numberProperties": [
-        {
-          "name": "animation",
-          "value": 2
-        }
-      ],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "name": "objects",
       "persistentUuid": "78350ec9-0e02-4c6e-8fa4-8d404e423e43",
       "width": 0,
       "x": 1376,
@@ -734,7 +699,14 @@
         }
       ],
       "stringProperties": [],
-      "initialVariables": []
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 0.1
+        }
+      ]
     },
     {
       "angle": 0,
@@ -894,7 +866,14 @@
         }
       ],
       "stringProperties": [],
-      "initialVariables": []
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 0.2
+        }
+      ]
     },
     {
       "angle": 0,
@@ -914,7 +893,391 @@
         }
       ],
       "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 0.2
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "NPC",
+      "persistentUuid": "3b90682e-6559-44df-ac94-23ed3eb1f929",
+      "width": 32,
+      "x": 1201,
+      "y": -321,
+      "zOrder": 69,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "NPC_id",
+          "type": "number",
+          "value": 0.1
+        },
+        {
+          "folded": true,
+          "name": "dialogue_id",
+          "type": "number",
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "NPCAnim",
+      "persistentUuid": "a6109d94-913e-426a-8469-f4761bf91e26",
+      "width": 0,
+      "x": 1184,
+      "y": -352,
+      "zOrder": 70,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 2
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "NPC_id",
+          "type": "number",
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "dialogueBoxes_lr",
+      "persistentUuid": "5e79df4d-c6a3-4892-925a-b6a389dec913",
+      "width": 0,
+      "x": 0,
+      "y": 96,
+      "zOrder": 71,
+      "numberProperties": [],
+      "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 384,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "f2eb822d-c736-4c14-86ac-4e14d0f85de6",
+      "width": 32,
+      "x": 1440,
+      "y": -320,
+      "zOrder": 72,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "6a25dad6-ea77-491d-8b46-c773df5ee1bf",
+      "width": 320,
+      "x": 1120,
+      "y": -352,
+      "zOrder": 73,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 384,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "3196831b-d5f0-4ae3-b286-711ce37d5f17",
+      "width": 32,
+      "x": 1088,
+      "y": -320,
+      "zOrder": 74,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "a0443ebf-98b8-4241-a94e-497d798795ea",
+      "width": 96,
+      "x": 1120,
+      "y": 64,
+      "zOrder": 75,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "e6d1fe05-e12b-4818-bb27-29c9de4e74ab",
+      "width": 128,
+      "x": 1216,
+      "y": 96,
+      "zOrder": 76,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "4cf2a158-d901-4d11-a39a-157cbdab42d4",
+      "width": 96,
+      "x": 1344,
+      "y": 64,
+      "zOrder": 77,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 288,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "13008cdf-7fbb-48df-aa5b-0b5197e65f29",
+      "width": 32,
+      "x": 2112,
+      "y": 608,
+      "zOrder": 78,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "22a87768-9c5d-4d98-957d-250419b627e1",
+      "width": 160,
+      "x": 2144,
+      "y": 576,
+      "zOrder": 79,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 384,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "0f2439d9-9c21-4aa7-842b-6edd577eca9f",
+      "width": 32,
+      "x": 2304,
+      "y": 608,
+      "zOrder": 80,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "47ca3433-179e-4173-b890-bbc867dd0359",
+      "width": 192,
+      "x": 2112,
+      "y": 992,
+      "zOrder": 81,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 96,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "9bf619c7-05cd-4c89-a95c-3829cc0b422c",
+      "width": 32,
+      "x": 2080,
+      "y": 896,
+      "zOrder": 82,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 416,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "e38e0bb0-fc94-4cdc-b83e-9075c3a235dd",
+      "width": 32,
+      "x": 1632,
+      "y": 608,
+      "zOrder": 83,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "d3a77e13-37d8-4ad5-b523-d31584476afa",
+      "width": 320,
+      "x": 1312,
+      "y": 576,
+      "zOrder": 84,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "2195aae7-cb9d-4427-9e40-d83419aecce6",
+      "width": 192,
+      "x": 1120,
+      "y": 672,
+      "zOrder": 85,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 64,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "2a1b7f49-309a-4724-9778-06cc88a23cf9",
+      "width": 32,
+      "x": 1280,
+      "y": 608,
+      "zOrder": 86,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 320,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "416255a1-d629-4fc8-8988-030a97d34f16",
+      "width": 32,
+      "x": 1088,
+      "y": 704,
+      "zOrder": 87,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "bf6556f3-3df0-4861-a6db-c418a8b8aa2e",
+      "width": 416,
+      "x": 1120,
+      "y": 1024,
+      "zOrder": 88,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "d33909c6-adfd-46b2-8e3a-3a591cd31202",
+      "width": 32,
+      "x": 1600,
+      "y": 1024,
+      "zOrder": 89,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "74a3a22a-972c-4f0b-8440-921a33a4f4e5",
+      "width": 64,
+      "x": 1536,
+      "y": 1056,
+      "zOrder": 90,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 64,
+      "layer": "",
+      "name": "teleportation",
+      "persistentUuid": "cde8e339-7219-4144-94a3-09197bd41cc1",
+      "width": 64,
+      "x": 1536,
+      "y": 992,
+      "zOrder": 62,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 5
+        }
+      ]
     }
   ],
   "objects": [
@@ -981,6 +1344,35 @@
                 {
                   "hasCustomCollisionMask": false,
                   "image": "refrigerator-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "nightstand-1.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1760,146 +2152,6 @@
     },
     {
       "assetStoreId": "",
-      "name": "hintIcons",
-      "tags": "",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [
-        {
-          "name": "Tween",
-          "type": "Tween::TweenBehavior"
-        }
-      ],
-      "animations": [
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "school-backpack-64.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "info-104.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetStoreId": "",
-      "name": "hintText",
-      "tags": "",
-      "type": "BBText::BBText",
-      "variables": [],
-      "effects": [],
-      "behaviors": [
-        {
-          "name": "Tween",
-          "type": "Tween::TweenBehavior"
-        }
-      ],
-      "content": {
-        "text": "[b]bold[/b] [i]italic[/i] [size=15]smaller[/size] [font=times]times[/font] font\n[spacing=12]spaced out[/spacing]\n[outline=yellow]outlined[/outline] [shadow=red]DropShadow[/shadow] ",
-        "opacity": 255,
-        "fontSize": 20,
-        "visible": true,
-        "color": "255;255;255",
-        "fontFamily": "Arial",
-        "align": "left",
-        "wordWrap": true
-      }
-    },
-    {
-      "assetStoreId": "",
-      "name": "hintBoxShape",
-      "tags": "",
-      "type": "PrimitiveDrawing::Drawer",
-      "variables": [
-        {
-          "folded": true,
-          "name": "XPos",
-          "type": "number",
-          "value": 0
-        },
-        {
-          "name": "YPos",
-          "type": "number",
-          "value": 0
-        }
-      ],
-      "effects": [],
-      "behaviors": [
-        {
-          "name": "Tween",
-          "type": "Tween::TweenBehavior"
-        }
-      ],
-      "fillOpacity": 255,
-      "outlineSize": 0,
-      "outlineOpacity": 255,
-      "fillColor": {
-        "b": 0,
-        "g": 0,
-        "r": 0
-      },
-      "outlineColor": {
-        "b": 0,
-        "g": 0,
-        "r": 0
-      },
-      "absoluteCoordinates": false,
-      "clearBetweenFrames": true
-    },
-    {
-      "assetStoreId": "",
       "name": "slash",
       "tags": "",
       "type": "Sprite",
@@ -2268,66 +2520,6 @@
                 {
                   "hasCustomCollisionMask": false,
                   "image": "left-1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetStoreId": "",
-      "name": "hazard",
-      "tags": "",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [
-        {
-          "folded": true,
-          "name": "hazardType",
-          "type": "number",
-          "value": 0
-        },
-        {
-          "folded": true,
-          "name": "hazardActive",
-          "type": "number",
-          "value": 0
-        },
-        {
-          "folded": true,
-          "name": "hazardDamage",
-          "type": "number",
-          "value": 0
-        }
-      ],
-      "effects": [],
-      "behaviors": [],
-      "animations": [
-        {
-          "name": "red",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.07999999821186066,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "red-1.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -2829,6 +3021,176 @@
         "includeConfig": 0
       },
       "target": "teleportation-system"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"waitFirst\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CompareTimer"
+          },
+          "parameters": [
+            "",
+            "\"waitFirst\"",
+            ">",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarObjet"
+          },
+          "parameters": [
+            "dialogue",
+            "dialogue_id",
+            "=",
+            "0.1"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "NPC",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "NPC",
+                "NPC_id",
+                "=",
+                "0.1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "NPC",
+                "dialogue_onPlayer",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "NPC",
+                "dialogue_active",
+                "=",
+                "2"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CompareTimer"
+          },
+          "parameters": [
+            "",
+            "\"waitFirst\"",
+            ">",
+            "3"
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "hint_firstHint",
+            "=",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CompareTimer"
+          },
+          "parameters": [
+            "",
+            "\"waitFirst\"",
+            ">",
+            "12"
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "hint_secondHint",
+            "=",
+            "1"
+          ]
+        }
+      ]
     }
   ],
   "layers": [
@@ -2896,6 +3258,10 @@
     {
       "name": "Pathfinding",
       "type": "PathfindingBehavior::PathfindingBehavior"
+    },
+    {
+      "name": "PathfindingObstacle",
+      "type": "PathfindingBehavior::PathfindingObstacleBehavior"
     },
     {
       "name": "TopDownMovement",

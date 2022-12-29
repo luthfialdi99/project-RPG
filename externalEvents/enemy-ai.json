@@ -7,7 +7,18 @@
       "type": "BuiltinCommonInstructions::ForEach",
       "object": "enemy",
       "conditions": [],
-      "actions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "enemy",
+            "=",
+            "enemy.Y()-32"
+          ]
+        }
+      ],
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -859,60 +870,6 @@
                         "inPursuit",
                         "=",
                         "1"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "CenterY"
-                      },
-                      "parameters": [
-                        "enemy",
-                        ">",
-                        "playerAnim.Y()+playerAnim.Height()"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "ChangePlan"
-                      },
-                      "parameters": [
-                        "enemy",
-                        "=",
-                        "playerAnim.ZOrder()+1"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "CenterY"
-                      },
-                      "parameters": [
-                        "enemy",
-                        "<",
-                        "playerAnim.Y()"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "ChangePlan"
-                      },
-                      "parameters": [
-                        "enemy",
-                        "=",
-                        "playerAnim.ZOrder()-1"
                       ]
                     }
                   ]

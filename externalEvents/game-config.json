@@ -80,14 +80,6 @@
         },
         {
           "type": {
-            "value": "Cache"
-          },
-          "parameters": [
-            "debugText"
-          ]
-        },
-        {
-          "type": {
             "value": "BBText::SetBBText"
           },
           "parameters": [
@@ -139,7 +131,7 @@
               "parameters": [
                 "debugText",
                 "=",
-                "\"[b][color=yellow][outline=black]\"+ToString(round(1/TimeDelta()))+\"\neffectStack: \"+damageEffects.VariableString(effectStack)+\"\n(global)invItemCount: \"+GlobalVariableString(invItemCount)+\"\n(global)player_AttackEnabled: \"+GlobalVariableString(player_attackEnabled)+\"\n\ndialogue_id: \"+dialogue.VariableString(dialogue_id)+\"\ndialogue_active(NPC): \"+NPC.VariableString(dialogue_active)+\"[/b][/color][/outline]\""
+                "\"[b][color=yellow][outline=black]\"+ToString(round(1/TimeDelta()))+\"\neffectStack: \"+damageEffects.VariableString(effectStack)+\"\n(global)invItemCount: \"+GlobalVariableString(invItemCount)+\"\n(global)player_AttackEnabled: \"+GlobalVariableString(player_attackEnabled)+\"\n\ndialogue_id: \"+dialogue.VariableString(dialogue_id)+\"\ndialogue_active(NPC): \"+NPC.VariableString(dialogue_active)+\"\n\nCurrent Zoom level:\"+\"[/b][/color][/outline]\""
               ]
             }
           ]
@@ -194,7 +186,7 @@
             "value": "AdvancedWindow::SetResizable"
           },
           "parameters": [
-            "",
+            "no",
             ""
           ]
         },

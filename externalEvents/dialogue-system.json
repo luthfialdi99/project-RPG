@@ -374,6 +374,16 @@
                   "actions": [
                     {
                       "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "dialogueOptionsShape",
+                        "=",
+                        "dialogueOptionsText.ZOrder()-2"
+                      ]
+                    },
+                    {
+                      "type": {
                         "value": "PrimitiveDrawing::RoundedRectangle"
                       },
                       "parameters": [
@@ -430,7 +440,7 @@
                   "parameters": [
                     "dialogueOptionsText",
                     "=",
-                    "dialogueOptions_lr.ZOrder()+2"
+                    "dialogueOptionsText.Y()"
                   ]
                 }
               ],
@@ -1057,18 +1067,6 @@
       "actions": [
         {
           "type": {
-            "value": "SetCenter"
-          },
-          "parameters": [
-            "dialogueArrow",
-            "=",
-            "slash.CenterX()+dialogueArrow.Width()/2",
-            "=",
-            "slash.CenterY()+dialogueArrow.Height()/2"
-          ]
-        },
-        {
-          "type": {
             "value": "ChangePlan"
           },
           "parameters": [
@@ -1221,31 +1219,9 @@
           "comment2": ""
         },
         {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "VarObjet"
-              },
-              "parameters": [
-                "dialogue",
-                "dialogue_id",
-                "=",
-                "NPC.Variable(dialogue_id)"
-              ]
-            },
-            {
-              "type": {
-                "value": "VarObjet"
-              },
-              "parameters": [
-                "NPC",
-                "dialogue_id",
-                "=",
-                "dialogue.Variable(dialogue_id)"
-              ]
-            }
-          ],
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "NPCAnim",
+          "conditions": [],
           "actions": [],
           "events": [
             {
@@ -1256,10 +1232,32 @@
                     "value": "VarObjet"
                   },
                   "parameters": [
-                    "NPC",
-                    "dialogue_onPlayer",
+                    "dialogue",
+                    "dialogue_id",
                     "=",
-                    "0"
+                    "NPC.Variable(dialogue_id)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_id",
+                    "=",
+                    "dialogue.Variable(dialogue_id)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPCAnim",
+                    "NPC_id",
+                    "=",
+                    "NPC.Variable(NPC_id)"
                   ]
                 }
               ],
@@ -1270,46 +1268,320 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "CenterY"
+                        "value": "VarObjet"
                       },
                       "parameters": [
-                        "playerAnim",
-                        ">",
-                        "NPC.CenterY()"
+                        "NPC",
+                        "dialogue_onPlayer",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "PosY"
+                          },
+                          "parameters": [
+                            "playerAnim",
+                            ">",
+                            "NPCAnim.Y()"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetCenter"
+                          },
+                          "parameters": [
+                            "dialogue",
+                            "=",
+                            "NPC.CenterX()",
+                            "=",
+                            "NPC.CenterY()-NPCAnim.Height()-30"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetCenter"
+                          },
+                          "parameters": [
+                            "dialogueArrow",
+                            "=",
+                            "dialogue.CenterX()",
+                            "=",
+                            "15+dialogue.CenterY()+dialogue.Height()/2"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "FlipY"
+                          },
+                          "parameters": [
+                            "dialogueArrow",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "PosY"
+                          },
+                          "parameters": [
+                            "playerAnim",
+                            "<",
+                            "NPCAnim.Y()"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetCenter"
+                          },
+                          "parameters": [
+                            "dialogue",
+                            "=",
+                            "NPC.CenterX()",
+                            "=",
+                            "NPC.CenterY()+62"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetCenter"
+                          },
+                          "parameters": [
+                            "dialogueArrow",
+                            "=",
+                            "dialogue.CenterX()",
+                            "=",
+                            "dialogue.CenterY()-5-dialogue.Height()/2"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "FlipY"
+                          },
+                          "parameters": [
+                            "dialogueArrow",
+                            "yes"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "NPC",
+                        "dialogue_onPlayer",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "PosY"
+                          },
+                          "parameters": [
+                            "playerAnim",
+                            ">",
+                            "NPCAnim.Y()"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetCenter"
+                          },
+                          "parameters": [
+                            "dialogue",
+                            "=",
+                            "player.CenterX()",
+                            "=",
+                            "player.CenterY()+player.Height()+30"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetCenter"
+                          },
+                          "parameters": [
+                            "dialogueArrow",
+                            "=",
+                            "dialogue.CenterX()",
+                            "=",
+                            "dialogue.CenterY()-5-dialogue.Height()/2"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "FlipY"
+                          },
+                          "parameters": [
+                            "dialogueArrow",
+                            "yes"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "PosY"
+                          },
+                          "parameters": [
+                            "playerAnim",
+                            "<",
+                            "NPCAnim.Y()"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetCenter"
+                          },
+                          "parameters": [
+                            "dialogue",
+                            "=",
+                            "player.CenterX()",
+                            "=",
+                            "player.CenterY()-playerAnim.Height()-30"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetCenter"
+                          },
+                          "parameters": [
+                            "dialogueArrow",
+                            "=",
+                            "dialogue.CenterX()",
+                            "=",
+                            "15+dialogue.CenterY()+dialogue.Height()/2"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "FlipY"
+                          },
+                          "parameters": [
+                            "dialogueArrow",
+                            "no"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Animation"
+                      },
+                      "parameters": [
+                        "dialogueBoxes_lr",
+                        "=",
+                        "0"
                       ]
                     }
                   ],
                   "actions": [
                     {
                       "type": {
-                        "value": "SetCenter"
+                        "value": "MettreXY"
+                      },
+                      "parameters": [
+                        "dialogueBoxes_lr",
+                        "=",
+                        "dialogue.X()-10",
+                        "=",
+                        "dialogue.Y()-5"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangeHeight"
+                      },
+                      "parameters": [
+                        "dialogueBoxes_lr",
+                        "=",
+                        "dialogue.Height()+20"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangeWidth"
+                      },
+                      "parameters": [
+                        "dialogueBoxes_lr",
+                        "=",
+                        "dialogue.Width()+20"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PrimitiveDrawing::RoundedRectangle"
+                      },
+                      "parameters": [
+                        "dialogueShape",
+                        "dialogueBoxes_lr.X()",
+                        "dialogueBoxes_lr.Y()",
+                        "dialogueBoxes_lr.X()+dialogueBoxes_lr.Width()",
+                        "dialogueBoxes_lr.Y()+dialogueBoxes_lr.Height()",
+                        "1000"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "dialogueShape",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Montre"
                       },
                       "parameters": [
                         "dialogue",
-                        "=",
-                        "NPC.CenterX()",
-                        "=",
-                        "NPC.CenterY()-NPCAnim.Height()-30"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetCenter"
-                      },
-                      "parameters": [
-                        "dialogueArrow",
-                        "=",
-                        "dialogue.CenterX()",
-                        "=",
-                        "15+dialogue.CenterY()+dialogue.Height()/2"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "FlipY"
-                      },
-                      "parameters": [
-                        "dialogueArrow",
                         ""
                       ]
                     }
@@ -1317,272 +1589,17 @@
                 },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "CenterY"
-                      },
-                      "parameters": [
-                        "playerAnim",
-                        "<",
-                        "NPC.CenterY()"
-                      ]
-                    }
-                  ],
+                  "conditions": [],
                   "actions": [
                     {
                       "type": {
-                        "value": "SetCenter"
-                      },
-                      "parameters": [
-                        "dialogue",
-                        "=",
-                        "NPC.CenterX()",
-                        "=",
-                        "NPC.CenterY()+32"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetCenter"
+                        "value": "Montre"
                       },
                       "parameters": [
                         "dialogueArrow",
-                        "=",
-                        "dialogue.CenterX()",
-                        "=",
-                        "dialogue.CenterY()-5-dialogue.Height()/2"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "FlipY"
-                      },
-                      "parameters": [
-                        "dialogueArrow",
-                        "yes"
+                        ""
                       ]
                     }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "VarObjet"
-                  },
-                  "parameters": [
-                    "NPC",
-                    "dialogue_onPlayer",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
-              "actions": [],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "CenterY"
-                      },
-                      "parameters": [
-                        "playerAnim",
-                        ">",
-                        "NPC.CenterY()"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetCenter"
-                      },
-                      "parameters": [
-                        "dialogue",
-                        "=",
-                        "player.CenterX()",
-                        "=",
-                        "player.CenterY()+player.Height()+30"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetCenter"
-                      },
-                      "parameters": [
-                        "dialogueArrow",
-                        "=",
-                        "dialogue.CenterX()",
-                        "=",
-                        "dialogue.CenterY()-5-dialogue.Height()/2"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "FlipY"
-                      },
-                      "parameters": [
-                        "dialogueArrow",
-                        "yes"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "CenterY"
-                      },
-                      "parameters": [
-                        "playerAnim",
-                        "<",
-                        "NPC.CenterY()"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetCenter"
-                      },
-                      "parameters": [
-                        "dialogue",
-                        "=",
-                        "player.CenterX()",
-                        "=",
-                        "player.CenterY()-playerAnim.Height()-30"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetCenter"
-                      },
-                      "parameters": [
-                        "dialogueArrow",
-                        "=",
-                        "dialogue.CenterX()",
-                        "=",
-                        "15+dialogue.CenterY()+dialogue.Height()/2"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "FlipY"
-                      },
-                      "parameters": [
-                        "dialogueArrow",
-                        "no"
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "Animation"
-                  },
-                  "parameters": [
-                    "dialogueBoxes_lr",
-                    "=",
-                    "0"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "MettreXY"
-                  },
-                  "parameters": [
-                    "dialogueBoxes_lr",
-                    "=",
-                    "dialogue.X()-10",
-                    "=",
-                    "dialogue.Y()-5"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ChangeHeight"
-                  },
-                  "parameters": [
-                    "dialogueBoxes_lr",
-                    "=",
-                    "dialogue.Height()+20"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ChangeWidth"
-                  },
-                  "parameters": [
-                    "dialogueBoxes_lr",
-                    "=",
-                    "dialogue.Width()+20"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PrimitiveDrawing::RoundedRectangle"
-                  },
-                  "parameters": [
-                    "dialogueShape",
-                    "dialogueBoxes_lr.X()",
-                    "dialogueBoxes_lr.Y()",
-                    "dialogueBoxes_lr.X()+dialogueBoxes_lr.Width()",
-                    "dialogueBoxes_lr.Y()+dialogueBoxes_lr.Height()",
-                    "1000"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Montre"
-                  },
-                  "parameters": [
-                    "dialogueShape",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Montre"
-                  },
-                  "parameters": [
-                    "dialogue",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Montre"
-                  },
-                  "parameters": [
-                    "dialogueArrow",
-                    ""
                   ]
                 }
               ]
@@ -1637,6 +1654,18 @@
           },
           "parameters": [
             "dialogueArrow"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetCenter"
+          },
+          "parameters": [
+            "dialogueArrow",
+            "=",
+            "slash.CenterX()",
+            "=",
+            "slash.CenterY()"
           ]
         }
       ]
@@ -1717,6 +1746,17 @@
                         "dialogue_id",
                         ">",
                         "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "NPC",
+                        "dialogue_id",
+                        "!=",
+                        "0.1"
                       ]
                     }
                   ],
@@ -1844,6 +1884,17 @@
                     ">=",
                     "1"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "CompareObjectTimer"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "\"dt\"",
+                    ">",
+                    "0.5"
+                  ]
                 }
               ],
               "actions": [],
@@ -1853,43 +1904,24 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "CompareObjectTimer"
+                        "value": "KeyReleased"
                       },
                       "parameters": [
-                        "dialogue",
-                        "\"dt\"",
-                        ">",
-                        "0.5"
+                        "",
+                        "e"
                       ]
                     }
                   ],
-                  "actions": [],
-                  "events": [
+                  "actions": [
                     {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "KeyReleased"
-                          },
-                          "parameters": [
-                            "",
-                            "e"
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "ModVarObjet"
-                          },
-                          "parameters": [
-                            "NPC",
-                            "dialogue_active",
-                            "+",
-                            "1"
-                          ]
-                        }
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "NPC",
+                        "dialogue_active",
+                        "+",
+                        "1"
                       ]
                     }
                   ]
@@ -1919,7 +1951,7 @@
                   "parameters": [
                     "dialogue",
                     "=",
-                    "\"hellasdwo bro\""
+                    "\"Greetings!\""
                   ]
                 }
               ]
@@ -1947,7 +1979,7 @@
                   "parameters": [
                     "dialogue",
                     "=",
-                    "\"whatchu doin'?\""
+                    "\"Welcome to the Test Map!\""
                   ]
                 }
               ]
@@ -1975,7 +2007,7 @@
                   "parameters": [
                     "dialogue",
                     "=",
-                    "\"Bored, aren'tcha?\""
+                    "\"This is the place where the programmer test things!\""
                   ]
                 }
               ]
@@ -2003,7 +2035,7 @@
                   "parameters": [
                     "dialogue",
                     "=",
-                    "\"Let's try this.\nHelloooo...\""
+                    "\"WASD to Move. Left CLICK to Attack!\""
                   ]
                 }
               ]
@@ -2024,6 +2056,465 @@
                 }
               ],
               "actions": [
+                {
+                  "type": {
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "=",
+                    "\"Go to nearby bushes and press F to hide!\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "7"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "dialogue_id",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_id",
+                    "=",
+                    "1.1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "NPC",
+                "dialogue_id",
+                "=",
+                "1.1"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "AutoTyping::BBText_AutoTyping::IsCharacterJustAdded"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "BBText_AutoTyping",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetObjectTimer"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "\"dt\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    ">=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CompareObjectTimer"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "\"dt\"",
+                    ">",
+                    "0.5"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "e"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "NPC",
+                        "dialogue_active",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "=",
+                    "\"WASD to Move. Left CLICK to Attack!\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "=",
+                    "\"Go to nearby bushes and press F to hide!\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "4"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "dialogue_id",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "FIRST ever Dialogue",
+          "comment2": ""
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "NPC",
+                "dialogue_id",
+                "=",
+                "0.1"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "AutoTyping::BBText_AutoTyping::IsCharacterJustAdded"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "BBText_AutoTyping",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetObjectTimer"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "\"dt\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    ">=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CompareObjectTimer"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "\"dt\"",
+                    ">",
+                    "0.5"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "e"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "NPC",
+                        "dialogue_active",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "=",
+                    "\"It's almost dinner.\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "=",
+                    "\"I need to make something.\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "4"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_onPlayer",
+                    "=",
+                    "0"
+                  ]
+                },
                 {
                   "type": {
                     "value": "ModVarObjet"
@@ -2510,8 +3001,378 @@
             "textG": 0,
             "textR": 0
           },
+          "comment": "angry CAT dialogue",
+          "comment2": ""
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "NPC",
+                "dialogue_id",
+                "=",
+                "3.1"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "AutoTyping::BBText_AutoTyping::IsCharacterJustAdded"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "BBText_AutoTyping",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetObjectTimer"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "\"dt\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    ">=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CompareObjectTimer"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "\"dt\"",
+                    ">",
+                    "0.5"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "e"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "NPC",
+                        "dialogue_active",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "=",
+                    "\"...\""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "NPCAnim",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "NPCAnim",
+                        "NPC_id",
+                        "=",
+                        "NPC.Variable(NPC_id)"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "FlipX"
+                      },
+                      "parameters": [
+                        "NPCAnim",
+                        "yes"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_onPlayer",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "=",
+                    "\"...\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "4"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_onPlayer",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "=",
+                    "\"HISSSSSS!!!\""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "NPCAnim",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarObjet"
+                      },
+                      "parameters": [
+                        "NPCAnim",
+                        "NPC_id",
+                        "=",
+                        "NPC.Variable(NPC_id)"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangeAnimation"
+                      },
+                      "parameters": [
+                        "NPCAnim",
+                        "=",
+                        "3"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectPositionYTween"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "Tween",
+                    "\"RUNCAT\"",
+                    "518",
+                    "\"linear\"",
+                    "1000",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "dialogue",
+                    "dialogue_id",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "NPC",
+                    "dialogue_active",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "NPCAnim",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "NPCAnim",
+                    "NPC_id",
+                    "=",
+                    "NPC.Variable(NPC_id)"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreY"
+                  },
+                  "parameters": [
+                    "NPCAnim",
+                    "=",
+                    "NPC.Y()"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
           "comment": "dialogue kasir supermarket 1",
           "comment2": ""
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -3513,6 +4374,48 @@
                           "parameters": [
                             "dialogueOptionsText",
                             ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "CompareObjectTimer"
+                          },
+                          "parameters": [
+                            "dialogue",
+                            "\"dt\"",
+                            ">",
+                            "1"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::Once"
+                              },
+                              "parameters": []
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ModVarGlobal"
+                              },
+                              "parameters": [
+                                "hint_dialogueOptions",
+                                "=",
+                                "1"
+                              ]
+                            }
                           ]
                         }
                       ]

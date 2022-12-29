@@ -2117,32 +2117,105 @@
                       "conditions": [
                         {
                           "type": {
-                            "value": "BBText::IsBBText"
-                          },
-                          "parameters": [
-                            "menuButtonText",
-                            "=",
-                            "\"OPTIONS\""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "MouseButtonReleased"
+                            "value": "LayerVisible"
                           },
                           "parameters": [
                             "",
-                            "Left"
+                            "\"UI\""
                           ]
                         }
                       ],
-                      "actions": [
+                      "actions": [],
+                      "events": [
                         {
-                          "type": {
-                            "value": "PushScene"
-                          },
-                          "parameters": [
-                            "",
-                            "\"Options\""
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BBText::IsBBText"
+                              },
+                              "parameters": [
+                                "menuButtonText",
+                                "=",
+                                "\"OPTIONS\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "MouseButtonReleased"
+                              },
+                              "parameters": [
+                                "",
+                                "Left"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "PushScene"
+                              },
+                              "parameters": [
+                                "",
+                                "\"Options\""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BBText::IsBBText"
+                              },
+                              "parameters": [
+                                "menuButtonText",
+                                "=",
+                                "\"QUIT GAME\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "MouseButtonReleased"
+                              },
+                              "parameters": [
+                                "",
+                                "Left"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ModVarGlobal"
+                              },
+                              "parameters": [
+                                "invOpen",
+                                "=",
+                                "0"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ModVarGlobal"
+                              },
+                              "parameters": [
+                                "invItemCount",
+                                "=",
+                                "0"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "Scene"
+                              },
+                              "parameters": [
+                                "",
+                                "\"main menu\"",
+                                ""
+                              ]
+                            }
                           ]
                         }
                       ]

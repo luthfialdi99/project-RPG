@@ -1,0 +1,759 @@
+{
+  "b": 209,
+  "disableInputWhenNotFocused": true,
+  "mangledName": "Cutscenes",
+  "name": "Cutscenes",
+  "r": 209,
+  "standardSortMethod": true,
+  "stopSoundsOnStartup": true,
+  "title": "",
+  "v": 209,
+  "uiSettings": {
+    "grid": false,
+    "gridType": "rectangular",
+    "gridWidth": 32,
+    "gridHeight": 32,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.8,
+    "snap": false,
+    "zoomFactor": 0.875,
+    "windowMask": false
+  },
+  "objectsGroups": [],
+  "variables": [],
+  "instances": [],
+  "objects": [
+    {
+      "assetStoreId": "",
+      "name": "cutsceneImage",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "NewSprite-1-0.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "cutsceneImage",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "cutsceneImage-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "cutsceneImage2",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "cutsceneImage2-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "cutsceneImage3",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{\"data\":\"{\\\"modelVersion\\\":2,\\\"piskel\\\":{\\\"name\\\":\\\"New Animation\\\",\\\"description\\\":\\\"\\\",\\\"fps\\\":12,\\\"height\\\":200,\\\"width\\\":400,\\\"layers\\\":[\\\"{\\\\\\\"name\\\\\\\":\\\\\\\"Layer 1\\\\\\\",\\\\\\\"opacity\\\\\\\":1,\\\\\\\"frameCount\\\\\\\":1,\\\\\\\"chunks\\\\\\\":[{\\\\\\\"layout\\\\\\\":[[0]],\\\\\\\"base64PNG\\\\\\\":\\\\\\\"data:image/png;base64,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\\\\\\\"}]}\\\",\\\"{\\\\\\\"name\\\\\\\":\\\\\\\"Layer 2\\\\\\\",\\\\\\\"opacity\\\\\\\":1,\\\\\\\"frameCount\\\\\\\":1,\\\\\\\"chunks\\\\\\\":[{\\\\\\\"layout\\\\\\\":[[0]],\\\\\\\"base64PNG\\\\\\\":\\\\\\\"data:image/png;base64,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\\\\\\\"}]}\\\"],\\\"hiddenFrames\\\":[\\\"\\\"]}}\",\"paths\":[\"C:\\\\Users\\\\USER\\\\Documents\\\\project-RPG\\\\cutsceneImage3-1.png\"],\"name\":\"cutsceneImage3\",\"singleFrame\":false}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "cutsceneImage3-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "cutsceneText",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "text": "[b]bold[/b] [i]italic[/i] [size=15]smaller[/size] [font=times]times[/font] font\n[spacing=12]spaced out[/spacing]\n[outline=yellow]outlined[/outline] [shadow=red]DropShadow[/shadow] ",
+        "opacity": 255,
+        "fontSize": 20,
+        "visible": true,
+        "color": "255;255;255",
+        "fontFamily": "Arial",
+        "align": "left",
+        "wordWrap": true
+      }
+    }
+  ],
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "game-config"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SceneBackground"
+          },
+          "parameters": [
+            "",
+            "\"0;0;0\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "cutsceneImage",
+            "0",
+            "0",
+            "\"\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "cutsceneText",
+            "0",
+            "0",
+            "\"\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Opacity"
+          },
+          "parameters": [
+            "cutsceneImage",
+            "=",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "SetSize"
+          },
+          "parameters": [
+            "cutsceneImage",
+            "400",
+            "200"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetCenter"
+          },
+          "parameters": [
+            "cutsceneImage",
+            "=",
+            "SceneWindowWidth()/2",
+            "=",
+            "SceneWindowHeight()/2-100"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarObjet"
+          },
+          "parameters": [
+            "cutsceneImage",
+            "id",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"cTimer\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarObjet"
+          },
+          "parameters": [
+            "cutsceneImage",
+            "id",
+            "=",
+            "1"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ChangeAnimation"
+          },
+          "parameters": [
+            "cutsceneImage",
+            "=",
+            "1"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"cTimer\"",
+                "<",
+                "5"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Opacity"
+              },
+              "parameters": [
+                "cutsceneImage",
+                "+",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"cTimer\"",
+                ">",
+                "7"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Opacity"
+              },
+              "parameters": [
+                "cutsceneImage",
+                "-",
+                "2"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Opacity"
+                  },
+                  "parameters": [
+                    "cutsceneImage",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "cutsceneImage",
+                    "id",
+                    "=",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"cTimer\""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarObjet"
+          },
+          "parameters": [
+            "cutsceneImage",
+            "id",
+            "=",
+            "2"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ChangeAnimation"
+          },
+          "parameters": [
+            "cutsceneImage",
+            "=",
+            "2"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"cTimer\"",
+                "<",
+                "5"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Opacity"
+              },
+              "parameters": [
+                "cutsceneImage",
+                "+",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"cTimer\"",
+                ">",
+                "7"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Opacity"
+              },
+              "parameters": [
+                "cutsceneImage",
+                "-",
+                "2"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Opacity"
+                  },
+                  "parameters": [
+                    "cutsceneImage",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "cutsceneImage",
+                    "id",
+                    "=",
+                    "3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"cTimer\""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarObjet"
+          },
+          "parameters": [
+            "cutsceneImage",
+            "id",
+            "=",
+            "3"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ChangeAnimation"
+          },
+          "parameters": [
+            "cutsceneImage",
+            "=",
+            "3"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"cTimer\"",
+                "<",
+                "5"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Opacity"
+              },
+              "parameters": [
+                "cutsceneImage",
+                "+",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"cTimer\"",
+                ">",
+                "7"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Opacity"
+              },
+              "parameters": [
+                "cutsceneImage",
+                "-",
+                "2"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Opacity"
+                  },
+                  "parameters": [
+                    "cutsceneImage",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "cutsceneImage",
+                    "id",
+                    "=",
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"cTimer\""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "VarObjet"
+          },
+          "parameters": [
+            "cutsceneImage",
+            "id",
+            "=",
+            "4"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Scene"
+          },
+          "parameters": [
+            "",
+            "\"apartment\"",
+            ""
+          ]
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "ambientLightColorB": 16777215,
+      "ambientLightColorG": 0,
+      "ambientLightColorR": 0,
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "name": "",
+      "visibility": true,
+      "cameras": [
+        {
+          "defaultSize": true,
+          "defaultViewport": true,
+          "height": 0,
+          "viewportBottom": 1,
+          "viewportLeft": 0,
+          "viewportRight": 1,
+          "viewportTop": 0,
+          "width": 0
+        }
+      ],
+      "effects": []
+    }
+  ],
+  "behaviorsSharedData": [
+    {
+      "name": "Pathfinding",
+      "type": "PathfindingBehavior::PathfindingBehavior"
+    },
+    {
+      "name": "PathfindingObstacle",
+      "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+    },
+    {
+      "name": "TopDownMovement",
+      "type": "TopDownMovementBehavior::TopDownMovementBehavior"
+    },
+    {
+      "name": "Tween",
+      "type": "Tween::TweenBehavior"
+    }
+  ]
+}

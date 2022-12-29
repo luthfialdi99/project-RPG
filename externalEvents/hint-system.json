@@ -38,23 +38,55 @@
             "hintBoxShape.Variable(YPos)",
             "5"
           ]
+        },
+        {
+          "type": {
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "hintIcons",
+            "=",
+            "dialogueOptionsText.ZOrder()+3"
+          ]
+        },
+        {
+          "type": {
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "hintText",
+            "=",
+            "dialogueOptionsText.ZOrder()+2"
+          ]
+        },
+        {
+          "type": {
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "hintBoxShape",
+            "=",
+            "dialogueOptionsText.ZOrder()+1"
+          ]
         }
       ]
     },
     {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": "item picked hint",
+      "comment2": ""
+    },
+    {
       "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "VarGlobal"
-          },
-          "parameters": [
-            "hint_itemToInventory",
-            "=",
-            "1"
-          ]
-        }
-      ],
+      "conditions": [],
       "actions": [],
       "events": [
         {
@@ -62,100 +94,168 @@
           "conditions": [
             {
               "type": {
-                "value": "BuiltinCommonInstructions::Once"
+                "value": "VarGlobal"
               },
-              "parameters": []
+              "parameters": [
+                "hint_itemToInventory",
+                "=",
+                "1"
+              ]
             }
           ],
-          "actions": [
+          "actions": [],
+          "events": [
             {
-              "type": {
-                "value": "Create"
-              },
-              "parameters": [
-                "hintIcons",
-                "hintIcons",
-                "30",
-                "250",
-                "\"HUD\""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "hintIcons",
+                    "30",
+                    "250",
+                    "\"HUD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Opacity"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "hintText",
+                    "hintIcons.X()+40",
+                    "hintIcons.Y()-5",
+                    "\"HUD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BBText::SetOpacity"
+                  },
+                  "parameters": [
+                    "hintText",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "hintBoxShape",
+                    "hintIcons.X()",
+                    "hintIcons.Y()",
+                    "\"HUD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PrimitiveDrawing::UseRelativeCoordinates"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeHeight"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "32"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeWidth"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "32"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_itemToInventory",
+                    "=",
+                    "2"
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "Opacity"
-              },
-              "parameters": [
-                "hintIcons",
-                "=",
-                "0"
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "XPos",
+                    "=",
+                    "hintIcons.X()+hintIcons.Width()+6"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "YPos",
+                    "=",
+                    "hintIcons.Y()+hintIcons.Height()+6"
+                  ]
+                }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
             {
               "type": {
-                "value": "Create"
-              },
-              "parameters": [
-                "hintIcons",
-                "hintText",
-                "hintIcons.X()+40",
-                "hintIcons.Y()-5",
-                "\"HUD\""
-              ]
-            },
-            {
-              "type": {
-                "value": "BBText::SetOpacity"
-              },
-              "parameters": [
-                "hintText",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "Create"
-              },
-              "parameters": [
-                "hintIcons",
-                "hintBoxShape",
-                "hintIcons.X()",
-                "hintIcons.Y()",
-                "\"HUD\""
-              ]
-            },
-            {
-              "type": {
-                "value": "PrimitiveDrawing::UseRelativeCoordinates"
-              },
-              "parameters": [
-                "hintBoxShape",
-                "no"
-              ]
-            },
-            {
-              "type": {
-                "value": "ChangeHeight"
-              },
-              "parameters": [
-                "hintIcons",
-                "=",
-                "32"
-              ]
-            },
-            {
-              "type": {
-                "value": "ChangeWidth"
-              },
-              "parameters": [
-                "hintIcons",
-                "=",
-                "32"
-              ]
-            },
-            {
-              "type": {
-                "value": "ModVarGlobal"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "hint_itemToInventory",
@@ -163,95 +263,72 @@
                 "2"
               ]
             }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
           ],
           "actions": [
             {
               "type": {
-                "value": "ModVarObjet"
+                "value": "BBText::SetBBText"
               },
               "parameters": [
-                "hintBoxShape",
-                "XPos",
+                "hintText",
                 "=",
-                "hintIcons.X()+hintIcons.Width()+6"
+                "\"[size=13]An item was added to your inventory.\n\nPress 'ESC' to open your inventory.[/size]\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeInIcons\"",
+                    "255",
+                    "\"linear\"",
+                    "300",
+                    ""
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "ModVarObjet"
-              },
-              "parameters": [
-                "hintBoxShape",
-                "YPos",
-                "=",
-                "hintIcons.Y()+hintIcons.Height()+6"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "VarGlobal"
-          },
-          "parameters": [
-            "hint_itemToInventory",
-            "=",
-            "2"
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "BBText::SetBBText"
-          },
-          "parameters": [
-            "hintText",
-            "=",
-            "\"[size=13]An item was added to your inventory.[/size]\""
-          ]
-        }
-      ],
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Tween::AddObjectOpacityTween"
-              },
-              "parameters": [
-                "hintIcons",
-                "Tween",
-                "\"fadeInIcons\"",
-                "255",
-                "\"linear\"",
-                "300",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeInIcons\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_itemToInventory",
+                    "=",
+                    "3"
+                  ]
+                }
               ]
             }
           ]
@@ -261,19 +338,7 @@
           "conditions": [
             {
               "type": {
-                "value": "Tween::HasFinished"
-              },
-              "parameters": [
-                "hintIcons",
-                "Tween",
-                "\"fadeInIcons\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "ModVarGlobal"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "hint_itemToInventory",
@@ -281,50 +346,62 @@
                 "3"
               ]
             }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "VarGlobal"
-          },
-          "parameters": [
-            "hint_itemToInventory",
-            "=",
-            "3"
-          ]
-        }
-      ],
-      "actions": [],
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
           ],
-          "actions": [
+          "actions": [],
+          "events": [
             {
-              "type": {
-                "value": "Tween::AddObjectVariableTween2"
-              },
-              "parameters": [
-                "hintBoxShape",
-                "Tween",
-                "\"stretch\"",
-                "XPos",
-                "hintIcons.X()+hintIcons.Width()+hintText.Width()+14",
-                "\"easeOutQuad\"",
-                "300",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectVariableTween2"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"stretch\"",
+                    "XPos",
+                    "hintIcons.X()+hintIcons.Width()+hintText.Width()+14",
+                    "\"easeOutQuad\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"stretch\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_itemToInventory",
+                    "=",
+                    "4"
+                  ]
+                }
               ]
             }
           ]
@@ -334,19 +411,7 @@
           "conditions": [
             {
               "type": {
-                "value": "Tween::HasFinished"
-              },
-              "parameters": [
-                "hintBoxShape",
-                "Tween",
-                "\"stretch\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "ModVarGlobal"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "hint_itemToInventory",
@@ -354,50 +419,62 @@
                 "4"
               ]
             }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "VarGlobal"
-          },
-          "parameters": [
-            "hint_itemToInventory",
-            "=",
-            "4"
-          ]
-        }
-      ],
-      "actions": [],
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
           ],
-          "actions": [
+          "actions": [],
+          "events": [
             {
-              "type": {
-                "value": "Tween::AddObjectVariableTween2"
-              },
-              "parameters": [
-                "hintBoxShape",
-                "Tween",
-                "\"Ystretch\"",
-                "YPos",
-                "hintIcons.Y()+hintText.Height()",
-                "\"easeOutQuad\"",
-                "300",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectVariableTween2"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"Ystretch\"",
+                    "YPos",
+                    "hintIcons.Y()+hintText.Height()",
+                    "\"easeOutQuad\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"Ystretch\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_itemToInventory",
+                    "=",
+                    "5"
+                  ]
+                }
               ]
             }
           ]
@@ -407,19 +484,7 @@
           "conditions": [
             {
               "type": {
-                "value": "Tween::HasFinished"
-              },
-              "parameters": [
-                "hintBoxShape",
-                "Tween",
-                "\"Ystretch\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "ModVarGlobal"
+                "value": "VarGlobal"
               },
               "parameters": [
                 "hint_itemToInventory",
@@ -427,24 +492,167 @@
                 "5"
               ]
             }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"hintCD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintText",
+                    "Tween",
+                    "\"fadeInHintText\"",
+                    "255",
+                    "\"linear\"",
+                    "500",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"hintCD\"",
+                    ">",
+                    "5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeOutIcons\"",
+                    "0",
+                    "\"linear\"",
+                    "300",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintText",
+                    "Tween",
+                    "\"fadeOutHintText\"",
+                    "0",
+                    "\"linear\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeOutIcons\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hintText",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    ""
+                  ]
+                }
+              ]
+            }
           ]
         }
       ]
     },
     {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": "welcome to test map hint",
+      "comment2": ""
+    },
+    {
       "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "VarGlobal"
-          },
-          "parameters": [
-            "hint_itemToInventory",
-            "=",
-            "5"
-          ]
-        }
-      ],
+      "conditions": [],
       "actions": [],
       "events": [
         {
@@ -452,33 +660,168 @@
           "conditions": [
             {
               "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "ResetTimer"
+                "value": "VarGlobal"
               },
               "parameters": [
-                "",
-                "\"hintCD\""
+                "hint_welcomeToTestMap",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "hintIcons",
+                    "30",
+                    "250",
+                    "\"HUD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Opacity"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "hintText",
+                    "hintIcons.X()+40",
+                    "hintIcons.Y()-5",
+                    "\"HUD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BBText::SetOpacity"
+                  },
+                  "parameters": [
+                    "hintText",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "hintBoxShape",
+                    "hintIcons.X()",
+                    "hintIcons.Y()",
+                    "\"HUD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PrimitiveDrawing::UseRelativeCoordinates"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeAnimation"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeHeight"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "32"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeWidth"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "32"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_welcomeToTestMap",
+                    "=",
+                    "2"
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "Tween::AddObjectOpacityTween"
-              },
-              "parameters": [
-                "hintText",
-                "Tween",
-                "\"fadeInHintText\"",
-                "255",
-                "\"linear\"",
-                "500",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "XPos",
+                    "=",
+                    "hintIcons.X()+hintIcons.Width()+6"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "YPos",
+                    "=",
+                    "hintIcons.Y()+hintIcons.Height()+6"
+                  ]
+                }
               ]
             }
           ]
@@ -488,104 +831,2132 @@
           "conditions": [
             {
               "type": {
-                "value": "CompareTimer"
+                "value": "VarGlobal"
               },
               "parameters": [
-                "",
-                "\"hintCD\"",
-                ">",
+                "hint_welcomeToTestMap",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "hintText",
+                "=",
+                "\"[size=13]This is a test map. Press WASD to move, E to interact.\n\nPress ESC to open the menu.[/size]\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeInIcons\"",
+                    "255",
+                    "\"linear\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeInIcons\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_welcomeToTestMap",
+                    "=",
+                    "3"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_welcomeToTestMap",
+                "=",
+                "3"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectVariableTween2"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"stretch\"",
+                    "XPos",
+                    "hintIcons.X()+hintIcons.Width()+hintText.Width()+14",
+                    "\"easeOutQuad\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"stretch\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_welcomeToTestMap",
+                    "=",
+                    "4"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_welcomeToTestMap",
+                "=",
+                "4"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectVariableTween2"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"Ystretch\"",
+                    "YPos",
+                    "hintIcons.Y()+hintText.Height()",
+                    "\"easeOutQuad\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"Ystretch\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_welcomeToTestMap",
+                    "=",
+                    "5"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_welcomeToTestMap",
+                "=",
                 "5"
               ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
             }
           ],
-          "actions": [
+          "actions": [],
+          "events": [
             {
-              "type": {
-                "value": "Tween::AddObjectOpacityTween"
-              },
-              "parameters": [
-                "hintIcons",
-                "Tween",
-                "\"fadeOutIcons\"",
-                "0",
-                "\"linear\"",
-                "300",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"hintCD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintText",
+                    "Tween",
+                    "\"fadeInHintText\"",
+                    "255",
+                    "\"linear\"",
+                    "500",
+                    ""
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "Tween::AddObjectOpacityTween"
-              },
-              "parameters": [
-                "hintText",
-                "Tween",
-                "\"fadeOutHintText\"",
-                "0",
-                "\"linear\"",
-                "300",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "Tween::HasFinished"
-              },
-              "parameters": [
-                "hintIcons",
-                "Tween",
-                "\"fadeOutIcons\""
-              ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Delete"
-              },
-              "parameters": [
-                "hintIcons",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Delete"
-              },
-              "parameters": [
-                "hintText",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"hintCD\"",
+                    ">",
+                    "5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeOutIcons\"",
+                    "0",
+                    "\"linear\"",
+                    "300",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintText",
+                    "Tween",
+                    "\"fadeOutHintText\"",
+                    "0",
+                    "\"linear\"",
+                    "300",
+                    ""
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "Delete"
-              },
-              "parameters": [
-                "hintBoxShape",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeOutIcons\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hintText",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    ""
+                  ]
+                }
               ]
             }
           ]
         }
       ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": "first HINT",
+      "comment2": ""
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_firstHint",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "hintIcons",
+                    "30",
+                    "250",
+                    "\"HUD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Opacity"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "hintText",
+                    "hintIcons.X()+40",
+                    "hintIcons.Y()-5",
+                    "\"HUD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BBText::SetOpacity"
+                  },
+                  "parameters": [
+                    "hintText",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "hintBoxShape",
+                    "hintIcons.X()",
+                    "hintIcons.Y()",
+                    "\"HUD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PrimitiveDrawing::UseRelativeCoordinates"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeAnimation"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeHeight"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "32"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeWidth"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "32"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_firstHint",
+                    "=",
+                    "2"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "XPos",
+                    "=",
+                    "hintIcons.X()+hintIcons.Width()+6"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "YPos",
+                    "=",
+                    "hintIcons.Y()+hintIcons.Height()+6"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_firstHint",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "hintText",
+                "=",
+                "\"[size=13]Press '[b]E[/b]' to cycle through dialogues.[/size]\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeInIcons\"",
+                    "255",
+                    "\"linear\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeInIcons\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_firstHint",
+                    "=",
+                    "3"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_firstHint",
+                "=",
+                "3"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectVariableTween2"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"stretch\"",
+                    "XPos",
+                    "hintIcons.X()+hintIcons.Width()+hintText.Width()+14",
+                    "\"easeOutQuad\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"stretch\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_firstHint",
+                    "=",
+                    "4"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_firstHint",
+                "=",
+                "4"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectVariableTween2"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"Ystretch\"",
+                    "YPos",
+                    "hintIcons.Y()+hintText.Height()",
+                    "\"easeOutQuad\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"Ystretch\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_firstHint",
+                    "=",
+                    "5"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_firstHint",
+                "=",
+                "5"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"hintCD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintText",
+                    "Tween",
+                    "\"fadeInHintText\"",
+                    "255",
+                    "\"linear\"",
+                    "500",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"hintCD\"",
+                    ">",
+                    "5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeOutIcons\"",
+                    "0",
+                    "\"linear\"",
+                    "300",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintText",
+                    "Tween",
+                    "\"fadeOutHintText\"",
+                    "0",
+                    "\"linear\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeOutIcons\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hintText",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": "second HINT",
+      "comment2": ""
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_secondHint",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "hintIcons",
+                    "30",
+                    "250",
+                    "\"HUD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Opacity"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "hintText",
+                    "hintIcons.X()+40",
+                    "hintIcons.Y()-5",
+                    "\"HUD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BBText::SetOpacity"
+                  },
+                  "parameters": [
+                    "hintText",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "hintBoxShape",
+                    "hintIcons.X()",
+                    "hintIcons.Y()",
+                    "\"HUD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PrimitiveDrawing::UseRelativeCoordinates"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeAnimation"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeHeight"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "32"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeWidth"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "32"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_secondHint",
+                    "=",
+                    "2"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "XPos",
+                    "=",
+                    "hintIcons.X()+hintIcons.Width()+6"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "YPos",
+                    "=",
+                    "hintIcons.Y()+hintIcons.Height()+6"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_secondHint",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "hintText",
+                "=",
+                "\"[size=13]Press '[b]E[/b]' to interact.\n[b]WASD[/b] to move around.[/size]\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeInIcons\"",
+                    "255",
+                    "\"linear\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeInIcons\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_secondHint",
+                    "=",
+                    "3"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_secondHint",
+                "=",
+                "3"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectVariableTween2"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"stretch\"",
+                    "XPos",
+                    "hintIcons.X()+hintIcons.Width()+hintText.Width()+14",
+                    "\"easeOutQuad\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"stretch\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_secondHint",
+                    "=",
+                    "4"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_secondHint",
+                "=",
+                "4"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectVariableTween2"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"Ystretch\"",
+                    "YPos",
+                    "hintIcons.Y()+hintText.Height()",
+                    "\"easeOutQuad\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"Ystretch\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_secondHint",
+                    "=",
+                    "5"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_secondHint",
+                "=",
+                "5"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"hintCD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintText",
+                    "Tween",
+                    "\"fadeInHintText\"",
+                    "255",
+                    "\"linear\"",
+                    "500",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"hintCD\"",
+                    ">",
+                    "5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeOutIcons\"",
+                    "0",
+                    "\"linear\"",
+                    "300",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintText",
+                    "Tween",
+                    "\"fadeOutHintText\"",
+                    "0",
+                    "\"linear\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeOutIcons\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hintText",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Comment",
+      "color": {
+        "b": 109,
+        "g": 230,
+        "r": 255,
+        "textB": 0,
+        "textG": 0,
+        "textR": 0
+      },
+      "comment": "hint Dialogue OPTIONS",
+      "comment2": ""
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_dialogueOptions",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "hintIcons",
+                    "30",
+                    "250",
+                    "\"\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Opacity"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "dialogueOptions_lr.X()+10",
+                    "=",
+                    "dialogueOptions_lr.Y()+dialogueOptions_lr.Height()+20"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "hintText",
+                    "hintIcons.X()+40",
+                    "hintIcons.Y()-5",
+                    "\"\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BBText::SetOpacity"
+                  },
+                  "parameters": [
+                    "hintText",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "hintBoxShape",
+                    "hintIcons.X()",
+                    "hintIcons.Y()",
+                    "\"\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PrimitiveDrawing::UseRelativeCoordinates"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeAnimation"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeHeight"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "32"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeWidth"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "=",
+                    "32"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_dialogueOptions",
+                    "=",
+                    "2"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "XPos",
+                    "=",
+                    "hintIcons.X()+hintIcons.Width()+6"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "YPos",
+                    "=",
+                    "hintIcons.Y()+hintIcons.Height()+6"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_dialogueOptions",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "hintText",
+                "=",
+                "\"[size=13]Press [b]W[/b] or [b]S[/b] key to choose a response.[/size]\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeInIcons\"",
+                    "255",
+                    "\"linear\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeInIcons\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_dialogueOptions",
+                    "=",
+                    "3"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_dialogueOptions",
+                "=",
+                "3"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectVariableTween2"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"stretch\"",
+                    "XPos",
+                    "hintIcons.X()+hintIcons.Width()+hintText.Width()+14",
+                    "\"easeOutQuad\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"stretch\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_dialogueOptions",
+                    "=",
+                    "4"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_dialogueOptions",
+                "=",
+                "4"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectVariableTween2"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"Ystretch\"",
+                    "YPos",
+                    "hintIcons.Y()+hintText.Height()",
+                    "\"easeOutQuad\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    "Tween",
+                    "\"Ystretch\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "hint_dialogueOptions",
+                    "=",
+                    "5"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "hint_dialogueOptions",
+                "=",
+                "5"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"hintCD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintText",
+                    "Tween",
+                    "\"fadeInHintText\"",
+                    "255",
+                    "\"linear\"",
+                    "500",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"hintCD\"",
+                    ">",
+                    "5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeOutIcons\"",
+                    "0",
+                    "\"linear\"",
+                    "300",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "hintText",
+                    "Tween",
+                    "\"fadeOutHintText\"",
+                    "0",
+                    "\"linear\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Tween::HasFinished"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    "Tween",
+                    "\"fadeOutIcons\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hintIcons",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hintText",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "hintBoxShape",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
     }
   ]
 }

@@ -695,6 +695,60 @@
         "name": "kursiMejaMakan-1.png",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "logo qyuphixtp.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "logo qyuphixtp.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "cutsceneImage-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "cutsceneImage-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "cutsceneImage2-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "cutsceneImage2-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "cutsceneImage3-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "cutsceneImage3-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "cat-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "cat-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "cat-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "cat-2.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -728,6 +782,7 @@
       "effects": [],
       "behaviors": [
         {
+          "ignoreDefaultControls": true,
           "name": "TopDownMovement",
           "type": "TopDownMovementBehavior::TopDownMovementBehavior",
           "acceleration": 5000,
@@ -736,7 +791,6 @@
           "angularMaxSpeed": 180,
           "customIsometryAngle": 30,
           "deceleration": 5000,
-          "ignoreDefaultControls": false,
           "maxSpeed": 200,
           "movementAngleOffset": 0,
           "rotateObject": false,
@@ -930,7 +984,12 @@
         }
       ],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
       "animations": [
         {
           "name": "",
@@ -2382,6 +2441,591 @@
         "align": "left",
         "wordWrap": true
       }
+    },
+    {
+      "assetStoreId": "",
+      "name": "hazard",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "hazardType",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "hazardActive",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "hazardDamage",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "PathfindingObstacle",
+          "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+          "cost": 2,
+          "impassable": true
+        }
+      ],
+      "animations": [
+        {
+          "name": "red",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "red-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "enemy",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "enemy_id",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "type",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "health",
+          "type": "number",
+          "value": 100
+        },
+        {
+          "folded": true,
+          "name": "posXInit",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "posYInit",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "inPursuit",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "attacking",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "damaged",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "totalDamage",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior",
+          "smoothingMaxCellGap": 1,
+          "acceleration": 400,
+          "allowDiagonals": true,
+          "angleOffset": 0,
+          "angularMaxSpeed": 180,
+          "cellHeight": 20,
+          "cellWidth": 20,
+          "extraBorder": 0,
+          "gridOffsetX": 0,
+          "gridOffsetY": 0,
+          "maxSpeed": 200,
+          "rotateObject": false
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "enemy",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "enemy-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 1,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "enemy-1-0.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.30000001192092896,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "enemy-1-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                },
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "enemy-2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                },
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "enemy-3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "enemydead",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "enemydead-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                },
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "enemydead-2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                },
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "enemydead-3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                },
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "enemydead-4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "hintIcons",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "school-backpack-64.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "info-104.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "hintText",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "content": {
+        "text": "[b]bold[/b] [i]italic[/i] [size=15]smaller[/size] [font=times]times[/font] font\n[spacing=12]spaced out[/spacing]\n[outline=yellow]outlined[/outline] [shadow=red]DropShadow[/shadow] ",
+        "opacity": 255,
+        "fontSize": 20,
+        "visible": true,
+        "color": "255;255;255",
+        "fontFamily": "Arial",
+        "align": "left",
+        "wordWrap": true
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "hintBoxShape",
+      "tags": "",
+      "type": "PrimitiveDrawing::Drawer",
+      "variables": [
+        {
+          "folded": true,
+          "name": "XPos",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "YPos",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "fillOpacity": 255,
+      "outlineSize": 0,
+      "outlineOpacity": 255,
+      "fillColor": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "outlineColor": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "absoluteCoordinates": false,
+      "clearBetweenFrames": true
+    },
+    {
+      "assetStoreId": "",
+      "name": "invisibleWall",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "red-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "blackBars",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "NewSprite-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsGroups": [],
@@ -2431,6 +3075,30 @@
     {
       "folded": true,
       "name": "hint_itemToInventory",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "hint_welcomeToTestMap",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "hint_dialogueOptions",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "folded": true,
+      "name": "hint_firstHint",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "hint_secondHint",
       "type": "number",
       "value": 0
     },
@@ -2486,6 +3154,14 @@
   "layouts": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/main-menu"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/untitled-scene"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/supermarket"
     },
     {
@@ -2494,11 +3170,11 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/untitled-scene"
+      "referenceTo": "/layouts/options"
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/options"
+      "referenceTo": "/layouts/cutscenes"
     }
   ],
   "externalEvents": [

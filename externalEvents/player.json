@@ -18,6 +18,16 @@
             "=",
             "player.Y()-player.Height()*2"
           ]
+        },
+        {
+          "type": {
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "playerAnim",
+            "=",
+            "playerAnim.Y()"
+          ]
         }
       ]
     },
@@ -4219,6 +4229,49 @@
       ]
     },
     {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CollisionNP"
+          },
+          "parameters": [
+            "player",
+            "invisibleWall",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SeparateFromObjects"
+          },
+          "parameters": [
+            "player",
+            "invisibleWall",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "Cache"
+          },
+          "parameters": [
+            "invisibleWall"
+          ]
+        }
+      ]
+    },
+    {
       "type": "BuiltinCommonInstructions::Comment",
       "color": {
         "b": 109,
@@ -4237,6 +4290,165 @@
       "conditions": [],
       "actions": [],
       "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "kursi & meja makan apartment",
+          "comment2": ""
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "objects",
+                "id",
+                "=",
+                "0.1"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BoundingBoxBottom"
+                  },
+                  "parameters": [
+                    "objects",
+                    ">",
+                    "playerAnim.Y()+playerAnim.Height()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "objects",
+                    "=",
+                    "playerAnim.ZOrder()+5"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BoundingBoxBottom"
+                  },
+                  "parameters": [
+                    "objects",
+                    "<",
+                    "playerAnim.Y()+playerAnim.Height()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "objects",
+                    "=",
+                    "playerAnim.ZOrder()-5"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "objects",
+                "id",
+                "=",
+                "0.2"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BoundingBoxBottom"
+                  },
+                  "parameters": [
+                    "objects",
+                    ">",
+                    "playerAnim.Y()+playerAnim.Height()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "objects",
+                    "=",
+                    "playerAnim.ZOrder()+6"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BoundingBoxBottom"
+                  },
+                  "parameters": [
+                    "objects",
+                    "<",
+                    "playerAnim.Y()+playerAnim.Height()"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "objects",
+                    "=",
+                    "playerAnim.ZOrder()-4"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
           "type": "BuiltinCommonInstructions::Comment",
           "color": {

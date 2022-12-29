@@ -32,6 +32,22 @@
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "hidingObject",
+            "=",
+            "hidingObject.Y()"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
           "type": {
@@ -129,98 +145,6 @@
           "conditions": [],
           "actions": [],
           "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "VarObjet"
-                  },
-                  "parameters": [
-                    "enemy",
-                    "inPursuit",
-                    ">",
-                    "2"
-                  ]
-                }
-              ],
-              "actions": [],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "PickNearest"
-                      },
-                      "parameters": [
-                        "hidingObject",
-                        "enemy.CenterX()",
-                        "enemy.CenterY()",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [],
-                  "events": [
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "CenterY"
-                          },
-                          "parameters": [
-                            "enemy",
-                            ">",
-                            "hidingObject.CenterY()"
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "ChangePlan"
-                          },
-                          "parameters": [
-                            "enemy",
-                            "=",
-                            "hidingObject.ZOrder()+1"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "CenterY"
-                          },
-                          "parameters": [
-                            "enemy",
-                            "<",
-                            "hidingObject.CenterY()"
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "ChangePlan"
-                          },
-                          "parameters": [
-                            "enemy",
-                            "=",
-                            "hidingObject.ZOrder()-1"
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
@@ -509,62 +433,6 @@
                     "hidingObject.CenterX()",
                     "=",
                     "hidingObject.CenterY()-30"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "CenterY"
-                      },
-                      "parameters": [
-                        "hidingObject",
-                        ">",
-                        "player.Y()-10"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "ChangePlan"
-                      },
-                      "parameters": [
-                        "hidingObject",
-                        "=",
-                        "playerAnim.ZOrder()+1"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "CenterY"
-                      },
-                      "parameters": [
-                        "hidingObject",
-                        "<",
-                        "player.Y()-10"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "ChangePlan"
-                      },
-                      "parameters": [
-                        "hidingObject",
-                        "=",
-                        "playerAnim.ZOrder()-1"
-                      ]
-                    }
                   ]
                 }
               ]

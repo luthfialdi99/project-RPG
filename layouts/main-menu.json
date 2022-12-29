@@ -1,0 +1,1954 @@
+{
+  "b": 209,
+  "disableInputWhenNotFocused": true,
+  "mangledName": "main_32menu",
+  "name": "main menu",
+  "r": 209,
+  "standardSortMethod": true,
+  "stopSoundsOnStartup": true,
+  "title": "",
+  "v": 209,
+  "uiSettings": {
+    "grid": false,
+    "gridType": "rectangular",
+    "gridWidth": 32,
+    "gridHeight": 32,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.8,
+    "snap": false,
+    "zoomFactor": 0.6646000000000002,
+    "windowMask": false
+  },
+  "objectsGroups": [],
+  "variables": [],
+  "instances": [],
+  "objects": [
+    {
+      "assetStoreId": "",
+      "name": "logo",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "logo qyuphixtp.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "mainMenuText",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "switch",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "content": {
+        "text": "[b]bold[/b] [i]italic[/i] [size=15]smaller[/size] [font=times]times[/font] font\n[spacing=12]spaced out[/spacing]\n[outline=yellow]outlined[/outline] [shadow=red]DropShadow[/shadow] ",
+        "opacity": 255,
+        "fontSize": 20,
+        "visible": true,
+        "color": "0;0;0",
+        "fontFamily": "Arial",
+        "align": "left",
+        "wordWrap": true
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "mainMenuBox",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "id",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "switch",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "NewSprite-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "game-config"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SceneBackground"
+          },
+          "parameters": [
+            "",
+            "\"0;0;0\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "logo",
+            "0",
+            "0",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Opacity"
+          },
+          "parameters": [
+            "logo",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetSize"
+          },
+          "parameters": [
+            "logo",
+            "148",
+            "148"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "SetCenter"
+          },
+          "parameters": [
+            "logo",
+            "=",
+            "SceneWindowWidth()/2",
+            "=",
+            "SceneWindowHeight()/2"
+          ]
+        },
+        {
+          "type": {
+            "value": "Opacity"
+          },
+          "parameters": [
+            "logo",
+            "+",
+            "3"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Opacity"
+          },
+          "parameters": [
+            "logo",
+            "=",
+            "255"
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"wait\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CompareTimer"
+          },
+          "parameters": [
+            "",
+            "\"wait\"",
+            ">",
+            "3"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Delete"
+          },
+          "parameters": [
+            "logo",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SceneBackground"
+          },
+          "parameters": [
+            "",
+            "\"131;131;131\""
+          ]
+        },
+        {
+          "type": {
+            "value": "PauseTimer"
+          },
+          "parameters": [
+            "",
+            "\"wait\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "TimerPaused"
+          },
+          "parameters": [
+            "",
+            "\"wait\""
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "mainMenuText",
+            "0",
+            "0",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "mainMenuText",
+            "1",
+            "0",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "mainMenuText",
+            "2",
+            "0",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "mainMenuText",
+            "3",
+            "0",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "mainMenuText",
+            "4",
+            "0",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "mainMenuBox",
+            "0",
+            "0",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "mainMenuText",
+            "5",
+            "0",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "mainMenuText",
+            "6",
+            "0",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "mainMenuText",
+            "7",
+            "0",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "SceneJustResumed"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarObjet"
+          },
+          "parameters": [
+            "mainMenuText",
+            "switch",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarObjet"
+          },
+          "parameters": [
+            "mainMenuBox",
+            "switch",
+            "=",
+            "0"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::ForEach",
+      "object": "mainMenuText",
+      "conditions": [],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "3"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "3"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "4"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "4"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "5"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "5"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "6"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "6"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "7"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "7"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "8"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Main title & options",
+          "comment2": ""
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "\"[size=32][color=white][shadow=black][b]K A L A[/b][/size][/color][/shadow]\""
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "50",
+                "=",
+                "SceneWindowHeight()/2-mainMenuText.Height()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "\"[size=24][color=white][shadow=black]Start[/size][/color][/shadow]\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "switch",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "=",
+                    "50",
+                    "=",
+                    "SceneWindowHeight()/2+20"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "switch",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "3"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "\"[size=24][color=white][shadow=black]Options[/size][/color][/shadow]\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "switch",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "=",
+                    "50",
+                    "=",
+                    "SceneWindowHeight()/2+60"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "switch",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "4"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "\"[size=24][color=white][shadow=black]Quit game[/size][/color][/shadow]\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "switch",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "=",
+                    "50",
+                    "=",
+                    "SceneWindowHeight()/2+100"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "switch",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "5"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "\"[size=11][color=white][shadow=black]A Qyuphix Production, 2022. This game is a work in progress. Confidential. Do not share.[/size][/color][/shadow]\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BBText::SetWordWrap"
+              },
+              "parameters": [
+                "mainMenuText",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "5",
+                "=",
+                "SceneWindowHeight()-mainMenuText.Height()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "CHAPTER SELECT",
+          "comment2": ""
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "6"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "\"[size=24][color=white][b]SELECT CHAPTER[/b][/size][/color]\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BBText::SetWordWrap"
+              },
+              "parameters": [
+                "mainMenuText",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "mainMenuBox",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "mainMenuBox",
+                    "id",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreX"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "=",
+                    "mainMenuBox.X()+30"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "=",
+                    "mainMenuBox.Y()+5+mainMenuText.Height()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "=",
+                    "mainMenuBox.ZOrder()+1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "7"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "\"[size=18][color=white]TEST MAP[/size][/color]\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BBText::SetWordWrap"
+              },
+              "parameters": [
+                "mainMenuText",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "mainMenuBox",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "mainMenuBox",
+                    "id",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreX"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "=",
+                    "mainMenuBox.X()+30"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "=",
+                    "mainMenuBox.Y()+5+100"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "=",
+                    "mainMenuBox.ZOrder()+1"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "mainMenuText",
+                        "",
+                        "",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "BBText::SetBBText"
+                      },
+                      "parameters": [
+                        "mainMenuText",
+                        "=",
+                        "\"[size=18][color=yellow]TEST MAP[/size][/color]\""
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "MouseButtonReleased"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Scene"
+                          },
+                          "parameters": [
+                            "",
+                            "\"Untitled scene\"",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "id",
+                "=",
+                "8"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "mainMenuText",
+                "=",
+                "\"[size=18][color=white]CHAPTER 1[/size][/color]\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BBText::SetWordWrap"
+              },
+              "parameters": [
+                "mainMenuText",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "mainMenuBox",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "mainMenuBox",
+                    "id",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreX"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "=",
+                    "mainMenuBox.X()+30"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "=",
+                    "mainMenuBox.Y()+5+150"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "=",
+                    "mainMenuBox.ZOrder()+1"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "mainMenuText",
+                        "",
+                        "",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "BBText::SetBBText"
+                      },
+                      "parameters": [
+                        "mainMenuText",
+                        "=",
+                        "\"[size=18][color=yellow]CHAPTER 1[/size][/color]\""
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "MouseButtonReleased"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Scene"
+                          },
+                          "parameters": [
+                            "",
+                            "\"Cutscenes\"",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "clickable menu",
+          "comment2": ""
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "mainMenuText",
+                "switch",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectPositionXTween"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "Tween",
+                    "\"right\"",
+                    "60",
+                    "\"easeOutQuad\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "mainMenuText",
+                            "id",
+                            "=",
+                            "2"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::ForEach",
+                          "object": "mainMenuBox",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "VarObjet"
+                              },
+                              "parameters": [
+                                "mainMenuBox",
+                                "id",
+                                "=",
+                                "1"
+                              ]
+                            }
+                          ],
+                          "actions": [],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "VarObjet"
+                                  },
+                                  "parameters": [
+                                    "mainMenuBox",
+                                    "switch",
+                                    "=",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "CompareObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "mainMenuBox",
+                                    "\"boxCD\"",
+                                    ">",
+                                    "0.5"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "ModVarObjet"
+                                  },
+                                  "parameters": [
+                                    "mainMenuBox",
+                                    "switch",
+                                    "=",
+                                    "2"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "ResetObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "mainMenuBox",
+                                    "\"boxCD\""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "VarObjet"
+                                  },
+                                  "parameters": [
+                                    "mainMenuBox",
+                                    "switch",
+                                    "=",
+                                    "2"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "CompareObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "mainMenuBox",
+                                    "\"boxCD\"",
+                                    ">",
+                                    "0.5"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "ModVarObjet"
+                                  },
+                                  "parameters": [
+                                    "mainMenuBox",
+                                    "switch",
+                                    "=",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "ResetObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "mainMenuBox",
+                                    "\"boxCD\""
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "mainMenuText",
+                            "id",
+                            "=",
+                            "3"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "PushScene"
+                          },
+                          "parameters": [
+                            "",
+                            "\"Options\""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectPositionXTween"
+                  },
+                  "parameters": [
+                    "mainMenuText",
+                    "Tween",
+                    "\"right\"",
+                    "50",
+                    "\"easeOutQuad\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::ForEach",
+      "object": "mainMenuBox",
+      "conditions": [],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "mainMenuBox",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "mainMenuBox",
+                "id",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "mainMenuBox",
+                "id",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetSize"
+              },
+              "parameters": [
+                "mainMenuBox",
+                "SceneWindowWidth()-mainMenuBox.X()",
+                "SceneWindowHeight()-mainMenuBox.Y()"
+              ]
+            },
+            {
+              "type": {
+                "value": "Opacity"
+              },
+              "parameters": [
+                "mainMenuBox",
+                "=",
+                "200"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "mainMenuBox",
+                    "switch",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "mainMenuBox",
+                    "=",
+                    "SceneWindowWidth()",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetObjectTimer"
+                  },
+                  "parameters": [
+                    "mainMenuBox",
+                    "\"boxCD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "mainMenuBox",
+                    "switch",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "mainMenuBox",
+                    "switch",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectPositionXTween"
+                  },
+                  "parameters": [
+                    "mainMenuBox",
+                    "Tween",
+                    "\"show\"",
+                    "SceneWindowWidth()",
+                    "\"easeOutQuad\"",
+                    "100",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "mainMenuBox",
+                    "switch",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectPositionXTween"
+                  },
+                  "parameters": [
+                    "mainMenuBox",
+                    "Tween",
+                    "\"show\"",
+                    "SceneWindowWidth()/2-100",
+                    "\"easeOutQuad\"",
+                    "300",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "ambientLightColorB": 0,
+      "ambientLightColorG": 0,
+      "ambientLightColorR": 1869182049,
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "name": "",
+      "visibility": true,
+      "cameras": [
+        {
+          "defaultSize": true,
+          "defaultViewport": true,
+          "height": 0,
+          "viewportBottom": 1,
+          "viewportLeft": 0,
+          "viewportRight": 1,
+          "viewportTop": 0,
+          "width": 0
+        }
+      ],
+      "effects": []
+    }
+  ],
+  "behaviorsSharedData": [
+    {
+      "name": "Pathfinding",
+      "type": "PathfindingBehavior::PathfindingBehavior"
+    },
+    {
+      "name": "PathfindingObstacle",
+      "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+    },
+    {
+      "name": "TopDownMovement",
+      "type": "TopDownMovementBehavior::TopDownMovementBehavior"
+    },
+    {
+      "name": "Tween",
+      "type": "Tween::TweenBehavior"
+    }
+  ]
+}
