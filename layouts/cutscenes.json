@@ -244,6 +244,28 @@
             "=",
             "0"
           ]
+        },
+        {
+          "type": {
+            "value": "BBText::SetBBText"
+          },
+          "parameters": [
+            "cutsceneText",
+            "=",
+            "\"\""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetCenter"
+          },
+          "parameters": [
+            "cutsceneText",
+            "=",
+            "cutsceneImage.CenterX()",
+            "=",
+            "cutsceneImage.CenterY()+cutsceneImage.Height()"
+          ]
         }
       ]
     },
@@ -271,6 +293,18 @@
             "SceneWindowWidth()/2",
             "=",
             "SceneWindowHeight()/2-100"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetCenter"
+          },
+          "parameters": [
+            "cutsceneText",
+            "=",
+            "cutsceneImage.CenterX()",
+            "=",
+            "cutsceneImage.CenterY()+cutsceneImage.Height()"
           ]
         }
       ]

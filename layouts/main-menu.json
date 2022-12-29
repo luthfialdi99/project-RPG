@@ -1017,7 +1017,7 @@
               "parameters": [
                 "mainMenuText",
                 "=",
-                "\"[size=11][color=white][shadow=black]A Qyuphix Production, 2022. This game is a work in progress. Confidential. Do not share.[/size][/color][/shadow]\""
+                "\"[size=12][color=white][shadow=black]Ver. Prototype.\nA Qyuphix Production, 2022. This game is a work in progress. Confidential. Do not share.[/size][/color][/shadow]\""
               ]
             },
             {
@@ -1036,7 +1036,7 @@
               "parameters": [
                 "mainMenuText",
                 "=",
-                "5",
+                "8",
                 "=",
                 "SceneWindowHeight()-mainMenuText.Height()"
               ]
@@ -1673,6 +1673,32 @@
                           "parameters": [
                             "",
                             "\"Options\""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "VarObjet"
+                          },
+                          "parameters": [
+                            "mainMenuText",
+                            "id",
+                            "=",
+                            "4"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Quit"
+                          },
+                          "parameters": [
+                            ""
                           ]
                         }
                       ]

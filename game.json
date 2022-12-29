@@ -782,9 +782,9 @@
       "effects": [],
       "behaviors": [
         {
-          "ignoreDefaultControls": true,
           "name": "TopDownMovement",
           "type": "TopDownMovementBehavior::TopDownMovementBehavior",
+          "ignoreDefaultControls": true,
           "acceleration": 5000,
           "allowDiagonals": true,
           "angleOffset": 0,
@@ -3087,8 +3087,8 @@
     {
       "folded": true,
       "name": "hint_dialogueOptions",
-      "type": "string",
-      "value": ""
+      "type": "number",
+      "value": 0
     },
     {
       "folded": true,
@@ -3099,6 +3099,12 @@
     {
       "folded": true,
       "name": "hint_secondHint",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "folded": true,
+      "name": "hint_endPrototype",
       "type": "number",
       "value": 0
     },
@@ -3158,6 +3164,10 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/cutscenes"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/untitled-scene"
     },
     {
@@ -3171,10 +3181,6 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/options"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/cutscenes"
     }
   ],
   "externalEvents": [

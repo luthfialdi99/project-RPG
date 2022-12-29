@@ -13,7 +13,18 @@
           "type": "BuiltinCommonInstructions::ForEach",
           "object": "NPCAnim",
           "conditions": [],
-          "actions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "NPCAnim",
+                "=",
+                "NPCAnim.Y()"
+              ]
+            }
+          ],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -35,18 +46,7 @@
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "ChangePlan"
-                      },
-                      "parameters": [
-                        "NPCAnim",
-                        "=",
-                        "NPCAnim.Y()"
-                      ]
-                    }
-                  ]
+                  "actions": []
                 },
                 {
                   "type": "BuiltinCommonInstructions::Standard",

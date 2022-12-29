@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.5846152791519535,
+    "zoomFactor": 0.6375274825494635,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -282,7 +282,7 @@
           "folded": true,
           "name": "id",
           "type": "number",
-          "value": 2
+          "value": 3
         }
       ]
     },
@@ -1287,6 +1287,108 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 320,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "a2fe9325-6266-4073-9174-f11726fe95fd",
+      "width": 32,
+      "x": 3808,
+      "y": 96,
+      "zOrder": 118,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 64,
+      "layer": "",
+      "name": "invisibleWall",
+      "persistentUuid": "1be2b359-1796-4c57-b685-8f26ad8f9600",
+      "width": 224,
+      "x": 3840,
+      "y": 352,
+      "zOrder": 65,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "NPC",
+      "persistentUuid": "556bb1d8-62de-4f9e-b4cd-1d648e61946e",
+      "width": 32,
+      "x": 1408,
+      "y": 0,
+      "zOrder": 119,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "dialogue_id",
+          "type": "number",
+          "value": 3.2
+        },
+        {
+          "folded": true,
+          "name": "NPC_id",
+          "type": "number",
+          "value": 3.2
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "NPCAnim",
+      "persistentUuid": "7532f537-eae0-419c-8e82-f11c1dfe731a",
+      "width": 0,
+      "x": 1408,
+      "y": -64,
+      "zOrder": 120,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "NPC_id",
+          "type": "number",
+          "value": 3.2
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "NPCAnim",
+      "persistentUuid": "a305fe94-48e2-4489-aa44-59ebe8d63de3",
+      "width": 0,
+      "x": 1472,
+      "y": -64,
+      "zOrder": 123,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "folded": true,
+          "name": "NPC_id",
+          "type": "number",
+          "value": 3.3
+        }
+      ]
     }
   ],
   "objects": [

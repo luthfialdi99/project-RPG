@@ -33,6 +33,15 @@
             "debugText",
             "\"debug\""
           ]
+        },
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"debug\""
+          ]
         }
       ]
     },
@@ -80,12 +89,47 @@
         },
         {
           "type": {
+            "value": "Cache"
+          },
+          "parameters": [
+            "debugText"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CompareTimer"
+          },
+          "parameters": [
+            "",
+            "\"debug\"",
+            ">",
+            "0.5"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
             "value": "BBText::SetBBText"
           },
           "parameters": [
             "debugText",
             "=",
             "\"[b][color=yellow][outline=black]\"+ToString(round(1/TimeDelta()))+\"\neffectStack: \"+damageEffects.VariableString(effectStack)+\"\n(global)invItemCount: \"+GlobalVariableString(invItemCount)+\"\n(global)player_AttackEnabled: \"+GlobalVariableString(player_attackEnabled)+\"\n\ndialogue_id: \"+dialogue.VariableString(dialogue_id)+\"[/b][/color][/outline]\""
+          ]
+        },
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"debug\""
           ]
         }
       ]
@@ -121,6 +165,17 @@
                 "100",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"debug\"",
+                ">",
+                "0.5"
+              ]
             }
           ],
           "actions": [
@@ -132,6 +187,15 @@
                 "debugText",
                 "=",
                 "\"[b][color=yellow][outline=black]\"+ToString(round(1/TimeDelta()))+\"\neffectStack: \"+damageEffects.VariableString(effectStack)+\"\n(global)invItemCount: \"+GlobalVariableString(invItemCount)+\"\n(global)player_AttackEnabled: \"+GlobalVariableString(player_attackEnabled)+\"\n\ndialogue_id: \"+dialogue.VariableString(dialogue_id)+\"\ndialogue_active(NPC): \"+NPC.VariableString(dialogue_active)+\"\n\nCurrent Zoom level:\"+\"[/b][/color][/outline]\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"debug\""
               ]
             }
           ]
